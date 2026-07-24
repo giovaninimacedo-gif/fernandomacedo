@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case de Sucesso | Fernando Macedo Consultoria</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --azul: #0B2545;
+    --azul-medio: #1B3A6B;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8C97A;
+    --branco: #FFFFFF;
+    --cinza-claro: #F4F6F9;
+    --cinza-texto: #5A6070;
+    --verde: #2ECC9A;
+    --laranja: #F4845F;
+    --texto: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cinza-claro);
+    color: var(--texto);
+    overflow-x: hidden;
+  }
+
+  /* ─── PAGE WRAPPER ─── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--branco);
+    box-shadow: 0 0 80px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  /* ─── CAPA ─── */
+  .capa {
+    background: linear-gradient(150deg, var(--azul) 0%, var(--azul-medio) 60%, #0F3460 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+
+  .capa::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,204,154,0.08) 0%, transparent 70%);
+  }
+
+  .logo-mark {
+    width: 90px; height: 90px;
+    border: 3px solid var(--dourado);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-mark span {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--dourado);
+  }
+
+  .capa-tag {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+
+  .capa h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+
+  .capa h1 em {
+    color: var(--dourado);
+    font-style: italic;
+  }
+
+  .capa-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    position: relative; z-index: 1;
+  }
+
+  .capa-stats {
+    display: flex;
+    gap: 48px;
+    position: relative; z-index: 1;
+  }
+
+  .capa-stat {
+    text-align: center;
+  }
+
+  .capa-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--dourado);
+    line-height: 1;
+  }
+
+  .capa-stat .label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+  }
+
+  .capa-divider {
+    width: 1px;
+    background: rgba(201,168,76,0.3);
+    align-self: stretch;
+  }
+
+  .capa-marca {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  /* ─── SEÇÕES ─── */
+  section {
+    padding: 80px 72px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+  }
+
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--azul);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--azul);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--cinza-texto);
+    margin-bottom: 16px;
+  }
+
+  /* ─── SEÇÃO INTRO ESCURA ─── */
+  .sec-dark {
+    background: var(--azul);
+    padding: 80px 72px;
+  }
+
+  .sec-dark .section-label { color: var(--dourado); }
+  .sec-dark h2 { color: var(--branco); }
+  .sec-dark p { color: rgba(255,255,255,0.7); }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--dourado), var(--azul-medio));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--dourado);
+    border: 3px solid var(--branco);
+    box-shadow: 0 0 0 3px var(--dourado);
+  }
+
+  .tl-num {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .tl-text {
+    font-size: 0.95rem;
+    color: var(--texto);
+    line-height: 1.5;
+  }
+
+  /* ─── DEPOIMENTO ─── */
+  .depoimento {
+    background: linear-gradient(135deg, var(--azul) 0%, #0F3460 100%);
+    border-radius: 16px;
+    padding: 56px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .depoimento::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 15rem;
+    color: rgba(201,168,76,0.12);
+    line-height: 1;
+  }
+
+  .dep-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--branco);
+    line-height: 1.7;
+    font-style: italic;
+    position: relative; z-index: 1;
+    margin-bottom: 32px;
+  }
+
+  .dep-autor {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative; z-index: 1;
+  }
+
+  .dep-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--dourado);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--azul);
+  }
+
+  .dep-info strong {
+    display: block;
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .dep-info span {
+    color: var(--dourado);
+    font-size: 0.82rem;
+  }
+
+  /* ─── GRID ENTREGAS ─── */
+  .grid-entregas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .entrega-card {
+    background: var(--cinza-claro);
+    border-radius: 12px;
+    padding: 24px;
+    border-left: 4px solid var(--dourado);
+    transition: transform 0.2s;
+  }
+
+  .entrega-card:hover { transform: translateY(-2px); }
+
+  .entrega-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--azul);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .entrega-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--azul);
+    margin-bottom: 6px;
+  }
+
+  .entrega-card p {
+    font-size: 0.82rem;
+    color: var(--cinza-texto);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* ─── MÉTRICAS HERO ─── */
+  .metricas-hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .metrica-card {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: 16px;
+    background: var(--cinza-claro);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metrica-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--dourado), var(--azul-medio));
+  }
+
+  .metrica-card .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--azul);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metrica-card .big.verde { color: var(--verde); }
+  .metrica-card .big.dourado { color: var(--dourado); }
+
+  .metrica-card .label-m {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cinza-texto);
+    font-weight: 600;
+  }
+
+  /* ─── CHART CONTAINER ─── */
+  .chart-wrapper {
+    background: var(--cinza-claro);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 24px 0;
+  }
+
+  .chart-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--azul);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .chart-wrapper canvas {
+    max-height: 280px;
+  }
+
+  /* ─── DASHBOARD ROW ─── */
+  .dash-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  .dash-card {
+    background: var(--cinza-claro);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .dash-card-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--cinza-texto);
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dash-card-title::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--dourado);
+  }
+
+  .kpi-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .kpi-row:last-child { border-bottom: none; }
+
+  .kpi-label { font-size: 0.85rem; color: var(--cinza-texto); }
+
+  .kpi-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--azul);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .badge-verde { background: rgba(46,204,154,0.15); color: #1a9970; }
+  .badge-warn { background: rgba(244,132,95,0.15); color: #c05030; }
+  .badge-azul { background: rgba(27,58,107,0.1); color: var(--azul-medio); }
+
+  /* ─── COMPARATIVO ─── */
+  .comparativo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 32px 0;
+  }
+
+  .comp-col {
+    padding: 36px;
+  }
+
+  .comp-antes {
+    background: #F8F0F0;
+    border-right: 2px solid var(--branco);
+  }
+
+  .comp-depois {
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 100%);
+  }
+
+  .comp-col h4 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .comp-antes h4 { color: #c0392b; }
+  .comp-depois h4 { color: var(--dourado); }
+
+  .comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .comp-antes .comp-item { color: #7f3131; }
+  .comp-depois .comp-item { color: rgba(255,255,255,0.85); }
+
+  .comp-item::before {
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 0.8rem;
+  }
+
+  .comp-antes .comp-item::before { content: '✗'; color: #c0392b; }
+  .comp-depois .comp-item::before { content: '✓'; color: var(--dourado); }
+
+  /* ─── PILARES ─── */
+  .pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .pilar-card {
+    background: var(--azul);
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .pilar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--dourado);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pilar-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+
+  .pilar-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+  }
+
+  /* ─── CANAL TABLE ─── */
+  .canal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.88rem;
+  }
+
+  .canal-table th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--azul);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .canal-table th:first-child { border-radius: 8px 0 0 0; }
+  .canal-table th:last-child { border-radius: 0 8px 0 0; }
+
+  .canal-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: var(--texto);
+  }
+
+  .canal-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .canal-table tr:last-child td { border-bottom: none; font-weight: 700; color: var(--azul); }
+
+  /* ─── RODAPÉ ─── */
+  .rodape {
+    background: var(--azul);
+    padding: 56px 72px;
+    text-align: center;
+  }
+
+  .rodape-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--dourado);
+    margin-bottom: 8px;
+  }
+
+  .rodape p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+    margin-bottom: 0;
+  }
+
+  /* ─── SECTION HEADER ACCENT ─── */
+  .sec-accent {
+    width: 48px;
+    height: 3px;
+    background: var(--dourado);
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+
+  /* ─── PRINT / SCREEN ─── */
+  @media print {
+    .page { box-shadow: none; }
+  }
+
+svg { max-width:100%; overflow:visible; }
+@media (max-width:700px){
+  .page{max-width:100%}
+  .capa{padding:56px 24px 48px;min-height:auto}
+  .capa h1{font-size:2.1rem}
+  .capa-sub{font-size:.92rem;margin-bottom:32px}
+  .capa-stats{flex-direction:column;gap:20px;align-items:center}
+  .capa-divider{width:48px;height:1px;align-self:auto}
+  .capa-stat .num{font-size:2.2rem}
+  .capa-marca{position:static;margin-top:32px;font-size:.72rem}
+  section{padding:44px 20px}
+  .sec-dark{padding:44px 20px}
+  .rodape{padding:36px 20px}
+  h2{font-size:1.55rem}
+  h3{font-size:1.1rem}
+  p{font-size:.9rem}
+  .comparativo{grid-template-columns:1fr}
+  .comp-antes{border-radius:12px 12px 0 0}
+  .comp-depois{border-radius:0 0 12px 12px}
+  .metricas-hero{grid-template-columns:1fr;gap:14px}
+  .dash-row{grid-template-columns:1fr;gap:14px}
+  .pilares{grid-template-columns:1fr;gap:12px}
+  .grid-entregas{grid-template-columns:1fr}
+  .chart-wrapper{padding:18px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .chart-wrapper svg{min-width:500px}
+  .canal-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .canal-table{min-width:360px;font-size:.8rem}
+  .canal-table th,.canal-table td{padding:9px 10px}
+  .depoimento{padding:32px 22px}
+  .dep-texto{font-size:1rem}
+  .timeline{padding-left:22px}
+  .kpi-val{font-size:.95rem}
+  .badge{font-size:.68rem;padding:2px 7px}
+  .logo-mark{width:70px;height:70px}
+  .logo-mark span{font-size:1.8rem}
+}
+@media (max-width:400px){
+  .capa h1{font-size:1.75rem}
+  h2{font-size:1.3rem}
+  .metrica-card .big{font-size:2rem}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CAPA
+════════════════════════════════════════════════════════════════ -->
+<div class="capa">
+  <div class="logo-mark"><span>FM</span></div>
+  <div class="capa-tag">Case de Sucesso • 2025–2026</div>
+  <h1>De <em>caos</em> a<br>resultado em<br><em>90 dias</em></h1>
+  <p class="capa-sub">Como a Consultoria Fernando Macedo transformou a Clínica Vitale e o Sorria Mais Odonto em máquinas de resultado — com processos, indicadores e crescimento acima de 100%.</p>
+  <div class="capa-stats">
+    <div class="capa-stat">
+      <div class="num">+102%</div>
+      <div class="label">Faturamento<br>Fev/26 Vitale</div>
+    </div>
+    <div class="capa-divider"></div>
+    <div class="capa-stat">
+      <div class="num">119%</div>
+      <div class="label">Meta consolidada<br>Abr/26</div>
+    </div>
+    <div class="capa-divider"></div>
+    <div class="capa-stat">
+      <div class="num">R$145k</div>
+      <div class="label">Faturamento<br>Abril 2026</div>
+    </div>
+  </div>
+  <div class="capa-marca">Fernando Macedo Consultoria & Mentoria</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 1 — O DESAFIO
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-label">01 — Contexto</div>
+  <div class="sec-accent"></div>
+  <h2>A história começa com um diagnóstico honesto</h2>
+  <p>Em novembro de 2025, o Dr. Ricardo Almeida, proprietário da Clínica Vitale Implant Center e coordenador do sistema Sorria Mais Odonto, enfrentava um cenário comum entre empreendedores de alta competência técnica: <strong>excelência clínica, mas operação sem estrutura de negócio.</strong></p>
+  <p>Sem processos definidos, sem indicadores, sem metas, sem histórico de vendas — e o sócio-proprietário preso no meio da operação financeira, sem tempo para pensar estrategicamente.</p>
+
+  <div class="comparativo">
+    <div class="comp-col comp-antes">
+      <h4>2025 — Antes da Consultoria</h4>
+      <div class="comp-item">Sem processos comerciais definidos</div>
+      <div class="comp-item">Sem indicadores ou métricas</div>
+      <div class="comp-item">Sem metas estabelecidas</div>
+      <div class="comp-item">Sem rotinas de gestão</div>
+      <div class="comp-item">Sem histórico de vendas estruturado</div>
+      <div class="comp-item">Dr. Ricardo dentro da operação financeira</div>
+      <div class="comp-item">Sem CRM implantado</div>
+    </div>
+    <div class="comp-col comp-depois">
+      <h4>2026 — Após a Consultoria</h4>
+      <div class="comp-item">Processo comercial documentado e rodando</div>
+      <div class="comp-item">17 indicadores estruturados e monitorados</div>
+      <div class="comp-item">Metas mensais e anuais estabelecidas</div>
+      <div class="comp-item">Rotinas semanais e mensais implantadas</div>
+      <div class="comp-item">Histórico de vendas e DRE mensais</div>
+      <div class="comp-item">Dr. Ricardo livre para pensar estratégia</div>
+      <div class="comp-item">CRM implantado e operando</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 2 — DEPOIMENTO
+════════════════════════════════════════════════════════════════ -->
+<section style="background: var(--cinza-claro);">
+  <div class="section-label">02 — Quem viveu, conta</div>
+  <div class="sec-accent"></div>
+  <div class="depoimento">
+    <p class="dep-texto">
+      "Iniciamos a consultoria com o Fernando em novembro de 2025. Em menos de três meses, toda a operação foi organizada: indicadores estruturados, processos implementados em todos os setores, CRM implantado e metas definidas. No dia 22 de janeiro de 2026, já havíamos alcançado as metas do mês. As reuniões e treinamentos são muito proveitosos, sempre com ações claras e resultados concretos. Com toda certeza indicamos essa consultoria."
+    </p>
+    <div class="dep-autor">
+      <div class="dep-avatar">RA</div>
+      <div class="dep-info">
+        <strong>Ricardo Almeida</strong>
+        <span>Proprietário da Clínica Vitale & Coordenador do Sistema Sorria Mais Odonto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 3 — LINHA DO TEMPO
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-label">03 — A Jornada de Transformação</div>
+  <div class="sec-accent"></div>
+  <h2>20 entregas em menos de 6 meses</h2>
+  <p>Cada entrega foi uma peça do quebra-cabeça. Uma a uma, a operação passou a ter clareza, direção e ritmo.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-num">Novembro 2025</div>
+      <div class="tl-text"><strong>Diagnóstico empresarial completo</strong> realizado com o Dr. Ricardo. Mapeamento de gente & gestão, organograma e descrição de cargos documentados. Plano de ação criado a partir do diagnóstico.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">Dezembro 2025</div>
+      <div class="tl-text"><strong>Estrutura financeira implantada:</strong> retirada do Dr. Ricardo da operação financeira, conciliação bancária diária, cobrança diária, fluxo de caixa projetado semanal, DRE de caixa mensal. Entendimento total de custos e despesas por empresa.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">Janeiro 2026</div>
+      <div class="tl-text"><strong>Planejamento comercial concluído:</strong> metas 2026 estipuladas, CRM implantado, indicadores criados, processos documentados, plano de comissionamento, scripts de vendas e rotinas comerciais. <em>No dia 22 de janeiro, as metas do mês já haviam sido alcançadas.</em> Faturamento Vitale +87,72% | Sorria Mais +40,51%.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">Fevereiro 2026</div>
+      <div class="tl-text"><strong>Processo seletivo em andamento</strong> para recepção e vendas. Faturamento Vitale <strong>+102,82%</strong> — melhor resultado do período. Sorria Mais Odonto +35,92%.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">Março 2026</div>
+      <div class="tl-text"><strong>Gestão de Pessoas estruturada:</strong> método de contratação por Valores Quinn, fluxograma de onboarding, perfil DISC e avaliação de desempenho implementados. Vitale +56,72% | Sorria Mais +68,92%. <em>Cenário previsto era 50% e 20%.</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">1° Trimestre 2026</div>
+      <div class="tl-text"><strong>Fechamento trimestral histórico:</strong> Vitale com <strong>+90,90%</strong> de crescimento no faturamento. Sorria Mais Odonto com <strong>+49,00%</strong>. Pilares do crescimento consolidados: Empreendedor Estratégico, Modelo de Negócio e Produto/Serviço.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">Abril 2026</div>
+      <div class="tl-text"><strong>Consolidado R$ 145.004</strong> — 119,84% da meta. Vitale: R$70.629 (103,86% da meta). Sorria Mais: R$74.375 (140,33% da meta). Dashboard de marketing e vendas operando com plena visibilidade.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 4 — GRÁFICOS MENSAIS
+════════════════════════════════════════════════════════════════ -->
+<section style="background: var(--cinza-claro);">
+  <div class="section-label">04 — Evolução Mensal</div>
+  <div class="sec-accent"></div>
+  <h2>Crescimento mês a mês: números que falam</h2>
+  <p>Os percentuais de crescimento do faturamento — mês a mês — mostram uma trajetória consistente e acima do planejado.</p>
+
+  <div class="metricas-hero">
+    <div class="metrica-card">
+      <div class="big verde">+102%</div>
+      <div class="label-m">Vitale — Fevereiro</div>
+    </div>
+    <div class="metrica-card">
+      <div class="big dourado">+90%</div>
+      <div class="label-m">Vitale — 1° Tri</div>
+    </div>
+    <div class="metrica-card">
+      <div class="big" style="color:var(--azul)">+70%</div>
+      <div class="label-m">Sorria Mais — Março</div>
+    </div>
+  </div>
+
+  <div class="chart-wrapper">
+    <div class="chart-title">📈 Crescimento do Faturamento — Vitale vs Sorria Mais (% acima da linha base)</div>
+    <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <!-- grid -->
+  <line x1='75' y1='225' x2='775' y2='225' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='180' x2='775' y2='180' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='134' x2='775' y2='134' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='89' x2='775' y2='89' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='43' x2='775' y2='43' stroke='#dde3ea' stroke-width='1'/>
+  <!-- y-axis labels -->
+  <text x='68' y='229' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#8899AA'>0%</text><text x='68' y='184' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#8899AA'>25%</text><text x='68' y='138' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#8899AA'>50%</text><text x='68' y='93' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#8899AA'>75%</text><text x='68' y='47' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#8899AA'>100%</text>
+  <!-- meta lines -->
+  <line x1='75' y1='134' x2='775' y2='134' stroke='#F4845F' stroke-width='1.8' stroke-dasharray='7,4'/>
+  <line x1='75' y1='189' x2='775' y2='189' stroke='#2ECC9A' stroke-width='1.8' stroke-dasharray='7,4'/>
+  <!-- Jan: Vitale 87.72, Sorria 40.51 -->
+  <rect x='105' y='66' width='44' height='159' fill='#0B2545' rx='4'/>
+  <text x='127' y='61' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#0B2545'>87%</text>
+  <rect x='157' y='151' width='44' height='74' fill='#C9A84C' rx='4'/>
+  <text x='179' y='146' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#C9A84C'>40%</text>
+  <text x='152' y='250' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Jan/26</text>
+  <!-- Fev: Vitale 102.82, Sorria 35.92 -->
+  <rect x='265' y='38' width='44' height='187' fill='#0B2545' rx='4'/>
+  <text x='287' y='33' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#0B2545'>102%</text>
+  <rect x='317' y='160' width='44' height='65' fill='#C9A84C' rx='4'/>
+  <text x='339' y='155' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#C9A84C'>35%</text>
+  <text x='312' y='250' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Fev/26</text>
+  <!-- Mar: Vitale 82.17, Sorria 70.58 (CORRECTED) -->
+  <rect x='425' y='76' width='44' height='149' fill='#0B2545' rx='4'/>
+  <text x='447' y='71' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#0B2545'>82%</text>
+  <rect x='477' y='97' width='44' height='128' fill='#C9A84C' rx='4'/>
+  <text x='499' y='92' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#C9A84C'>70%</text>
+  <text x='472' y='250' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Mar/26</text>
+  <!-- Abr: Vitale 56.72, Sorria 68.92 (CORRECTED) -->
+  <rect x='585' y='122' width='44' height='103' fill='#0B2545' rx='4'/>
+  <text x='607' y='117' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#0B2545'>56%</text>
+  <rect x='637' y='100' width='44' height='125' fill='#C9A84C' rx='4'/>
+  <text x='659' y='95' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#C9A84C'>68%</text>
+  <text x='632' y='250' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Abr/26</text>
+  <!-- legend -->
+  <rect x='100' y='275' width='13' height='11' fill='#0B2545' rx='2'/><text x='119' y='284' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Vitale</text>
+  <rect x='185' y='275' width='13' height='11' fill='#C9A84C' rx='2'/><text x='204' y='284' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Sorria Mais</text>
+  <line x1='310' y1='280' x2='330' y2='280' stroke='#F4845F' stroke-width='2' stroke-dasharray='6,3'/>
+  <text x='336' y='284' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Meta Vitale (50%)</text>
+  <line x1='470' y1='280' x2='490' y2='280' stroke='#2ECC9A' stroke-width='2' stroke-dasharray='6,3'/>
+  <text x='496' y='284' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Meta Sorria Mais (20%)</text>
+</svg>
+  </div>
+
+  <div class="dash-row">
+    <div class="chart-wrapper" style="margin:0">
+      <div class="chart-title">🎯 Vitale — Meta vs Realizado (%)</div>
+      <svg viewBox="0 0 360 215" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <text x='180' y='18' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA' letter-spacing='2'>% DA META ATINGIDA POR MÊS</text>
+  <!-- meta 100% line: 100/145*260 = 179.3 → x=66+179=245 -->
+  <line x1='245' y1='28' x2='245' y2='168' stroke='#C9A84C' stroke-width='1.5' stroke-dasharray='5,3'/>
+  <text x='245' y='180' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='9' fill='#C9A84C'>100%</text>
+  <!-- Jan 125.2% → w=224.5 -->
+  <text x='62' y='58' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Jan/26</text>
+  <rect x='66' y='45' width='224' height='16' fill='#0B2545' rx='3'/>
+  <text x='295' y='57' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>125,2%</text>
+  <!-- Fev 135.2% → w=242.6 -->
+  <text x='62' y='88' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Fev/26</text>
+  <rect x='66' y='75' width='242' height='16' fill='#0B2545' rx='3'/>
+  <text x='313' y='87' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>135,2%</text>
+  <!-- Mar 121.4% → w=217.8 -->
+  <text x='62' y='118' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Mar/26</text>
+  <rect x='66' y='105' width='218' height='16' fill='#0B2545' rx='3'/>
+  <text x='289' y='117' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>121,4%</text>
+  <!-- Abr 103.9% → w=186.3 -->
+  <text x='62' y='148' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Abr/26</text>
+  <rect x='66' y='135' width='186' height='16' fill='#0B2545' rx='3'/>
+  <text x='257' y='147' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>103,9%</text>
+  <!-- summary badge -->
+  <rect x='55' y='195' width='250' height='22' fill='#0B2545' rx='8'/>
+  <text x='180' y='210' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' fill='white'>Média: 121,4% da meta ✓</text>
+</svg>
+    </div>
+    <div class="chart-wrapper" style="margin:0">
+      <div class="chart-title">🎯 Sorria Mais — Meta vs Realizado (%)</div>
+      <svg viewBox="0 0 360 215" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <text x='180' y='18' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA' letter-spacing='2'>% DA META ATINGIDA POR MÊS</text>
+  <line x1='245' y1='28' x2='245' y2='168' stroke='#0B2545' stroke-width='1.5' stroke-dasharray='5,3'/>
+  <text x='245' y='180' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='9' fill='#0B2545'>100%</text>
+  <!-- Jan 117.1% → w=210.0 -->
+  <text x='62' y='58' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Jan/26</text>
+  <rect x='66' y='45' width='210' height='16' fill='#C9A84C' rx='3'/>
+  <text x='281' y='57' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>117,1%</text>
+  <!-- Fev 113.3% → w=203.3 -->
+  <text x='62' y='88' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Fev/26</text>
+  <rect x='66' y='75' width='203' height='16' fill='#C9A84C' rx='3'/>
+  <text x='274' y='87' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>113,3%</text>
+  <!-- Mar 142.2% → w=255.1 -->
+  <text x='62' y='118' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Mar/26</text>
+  <rect x='66' y='105' width='255' height='16' fill='#C9A84C' rx='3'/>
+  <text x='326' y='117' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>142,2%</text>
+  <!-- Abr 140.3% → w=251.7 -->
+  <text x='62' y='148' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Abr/26</text>
+  <rect x='66' y='135' width='252' height='16' fill='#C9A84C' rx='3'/>
+  <text x='323' y='147' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>140,3%</text>
+  <rect x='55' y='195' width='250' height='22' fill='#C9A84C' rx='8'/>
+  <text x='180' y='210' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' fill='white'>Média: 128,2% da meta ✓</text>
+</svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 5 — DASHBOARD ABRIL
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-label">05 — Dashboard Abril 2026</div>
+  <div class="sec-accent"></div>
+  <h2>Visão consolidada: R$ 145.004 em abril</h2>
+
+  <div class="metricas-hero">
+    <div class="metrica-card">
+      <div class="big verde">R$145k</div>
+      <div class="label-m">Faturamento Total</div>
+    </div>
+    <div class="metrica-card">
+      <div class="big dourado">119,84%</div>
+      <div class="label-m">Meta Consolidada</div>
+    </div>
+    <div class="metrica-card">
+      <div class="big" style="color:var(--azul)">48 vendas</div>
+      <div class="label-m">Total Fechamentos</div>
+    </div>
+  </div>
+
+  <div class="dash-row">
+    <div class="dash-card">
+      <div class="dash-card-title">Vitale Implant Center</div>
+      <div class="kpi-row"><span class="kpi-label">Meta</span><span class="kpi-val">R$ 68.000</span></div>
+      <div class="kpi-row"><span class="kpi-label">Faturamento</span><span class="kpi-val">R$ 70.628</span></div>
+      <div class="kpi-row"><span class="kpi-label">% da Meta</span><span class="kpi-val"><span class="badge badge-verde">103,9% ✓</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">Ticket Médio</span><span class="kpi-val">R$ 3.210</span></div>
+      <div class="kpi-row"><span class="kpi-label">Vendas</span><span class="kpi-val">22</span></div>
+      <div class="kpi-row"><span class="kpi-label">Leads</span><span class="kpi-val">500</span></div>
+      <div class="kpi-row"><span class="kpi-label">Invest. Marketing</span><span class="kpi-val">R$ 6.377</span></div>
+    </div>
+    <div class="dash-card">
+      <div class="dash-card-title">Sorria Mais Odonto</div>
+      <div class="kpi-row"><span class="kpi-label">Meta</span><span class="kpi-val">R$ 53.000</span></div>
+      <div class="kpi-row"><span class="kpi-label">Faturamento</span><span class="kpi-val">R$ 74.375</span></div>
+      <div class="kpi-row"><span class="kpi-label">% da Meta</span><span class="kpi-val"><span class="badge badge-verde">140,3% ✓</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">Ticket Médio</span><span class="kpi-val">R$ 2.861</span></div>
+      <div class="kpi-row"><span class="kpi-label">Vendas</span><span class="kpi-val">26</span></div>
+      <div class="kpi-row"><span class="kpi-label">Leads</span><span class="kpi-val">46</span></div>
+      <div class="kpi-row"><span class="kpi-label">Invest. Marketing</span><span class="kpi-val">R$ 503</span></div>
+    </div>
+  </div>
+
+  <div class="chart-wrapper">
+    <div class="chart-title">📊 Fechamento por Canal — Abril 2026 (Vitale + Sorria Mais)</div>
+    <svg viewBox="0 0 800 310" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <line x1='75' y1='225' x2='775' y2='225' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='175' x2='775' y2='175' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='125' x2='775' y2='125' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='75' x2='775' y2='75' stroke='#dde3ea' stroke-width='1'/><line x1='75' y1='25' x2='775' y2='25' stroke='#dde3ea' stroke-width='1'/>
+  <text x='68' y='229' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$0k</text><text x='68' y='179' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$8k</text><text x='68' y='129' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$16k</text><text x='68' y='79' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$24k</text><text x='68' y='29' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$32k</text>
+  <!-- Recorrência: Vitale 24788, Sorria 30885 -->
+  <rect x='105' y='70' width='44' height='155' fill='#0B2545' rx='4'/>
+  <text x='127' y='65' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$25k</text>
+  <rect x='157' y='32' width='44' height='193' fill='#C9A84C' rx='4'/>
+  <text x='179' y='27' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$31k</text>
+  <text x='152' y='248' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Recorrência</text>
+  <!-- Indicação: Vitale 18275, Sorria 30180 -->
+  <rect x='265' y='111' width='44' height='114' fill='#0B2545' rx='4'/>
+  <text x='287' y='106' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$18k</text>
+  <rect x='317' y='36' width='44' height='189' fill='#C9A84C' rx='4'/>
+  <text x='339' y='31' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$30k</text>
+  <text x='312' y='248' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Indicação</text>
+  <!-- Leads Anteriores: Vitale 18000, Sorria 13310 -->
+  <rect x='425' y='112' width='44' height='112' fill='#0B2545' rx='4'/>
+  <text x='447' y='108' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$18k</text>
+  <rect x='477' y='142' width='44' height='83' fill='#C9A84C' rx='4'/>
+  <text x='499' y='137' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$13k</text>
+  <text x='472' y='248' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Leads Anteriores</text>
+  <!-- Leads Mês: Vitale 9565 only -->
+  <rect x='585' y='165' width='44' height='60' fill='#0B2545' rx='4'/>
+  <text x='607' y='160' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$9k</text>
+  <text x='607' y='248' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Leads do Mês</text>
+  <!-- legend -->
+  <rect x='105' y='272' width='13' height='11' fill='#0B2545' rx='2'/><text x='124' y='281' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Vitale</text>
+  <rect x='200' y='272' width='13' height='11' fill='#C9A84C' rx='2'/><text x='219' y='281' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Sorria Mais</text>
+</svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 6 — MARKETING
+════════════════════════════════════════════════════════════════ -->
+<section style="background: var(--cinza-claro);">
+  <div class="section-label">06 — Performance de Marketing</div>
+  <div class="sec-accent"></div>
+  <h2>Métricas que orientam decisões inteligentes</h2>
+
+  <div class="dash-row">
+    <div class="dash-card">
+      <div class="dash-card-title">Sorria Mais Odonto — Abril</div>
+      <div class="kpi-row"><span class="kpi-label">Impressões</span><span class="kpi-val">20.601</span></div>
+      <div class="kpi-row"><span class="kpi-label">Alcance</span><span class="kpi-val">8.198</span></div>
+      <div class="kpi-row"><span class="kpi-label">Leads Gerados</span><span class="kpi-val"><span class="badge badge-verde">46 ✓ Meta ≥35</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">CPL</span><span class="kpi-val"><span class="badge badge-verde">R$10,94 ✓</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">CTR</span><span class="kpi-val"><span class="badge badge-warn">1,43% ⚠</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">Investimento</span><span class="kpi-val">R$ 503,44</span></div>
+    </div>
+    <div class="dash-card">
+      <div class="dash-card-title">Vitale Implant — Abril</div>
+      <div class="kpi-row"><span class="kpi-label">Impressões</span><span class="kpi-val">418.860</span></div>
+      <div class="kpi-row"><span class="kpi-label">Alcance</span><span class="kpi-val">121.988</span></div>
+      <div class="kpi-row"><span class="kpi-label">Leads Gerados</span><span class="kpi-val"><span class="badge badge-verde">500 ✓ Meta ≥67</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">CPL</span><span class="kpi-val"><span class="badge badge-verde">R$12,75 ✓</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">CTR</span><span class="kpi-val"><span class="badge badge-warn">1,47% ⚠</span></span></div>
+      <div class="kpi-row"><span class="kpi-label">Investimento</span><span class="kpi-val"><span class="badge badge-warn">R$6.377 ⚠</span></span></div>
+    </div>
+  </div>
+
+  <div class="chart-wrapper">
+    <div class="chart-title">🦷 Top Procedimentos — Sorria Mais Odonto (Faturamento Abril)</div>
+    <svg viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <!-- max=27600, bar max width=460, labels start at x=175+width+8 -->
+  <text x='170' y='20' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Protocolo</text>
+  <rect x='175' y='8' width='460' height='18' fill='#0B2545' rx='4'/>
+  <text x='642' y='20' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#0B2545'>R$27.600</text>
+
+  <text x='170' y='52' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Implante</text>
+  <rect x='175' y='40' width='391' height='18' fill='#1B3A6B' rx='4'/>
+  <text x='574' y='52' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#1B3A6B'>R$23.500</text>
+
+  <text x='170' y='84' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Metalocerâmica</text>
+  <rect x='175' y='72' width='117' height='18' fill='#C9A84C' rx='4'/>
+  <text x='300' y='84' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#C9A84C'>R$7.000</text>
+
+  <text x='170' y='116' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Enxerto Ósseo</text>
+  <rect x='175' y='104' width='80' height='18' fill='#E8C97A' rx='4'/>
+  <text x='263' y='116' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#8a7030'>R$4.800</text>
+
+  <text x='170' y='148' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Comp. Neodent</text>
+  <rect x='175' y='136' width='70' height='18' fill='#2ECC9A' rx='4'/>
+  <text x='253' y='148' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#1a9970'>R$4.200</text>
+
+  <text x='170' y='180' text-anchor='end' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Enxerto Conjut.</text>
+  <rect x='175' y='168' width='20' height='18' fill='#F4845F' rx='4'/>
+  <text x='203' y='180' font-family='DM Sans,sans-serif' font-size='11' font-weight='700' fill='#c05030'>R$1.200</text>
+</svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 7 — QUADRIMESTRE
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-label">07 — Visão Quadrimestral</div>
+  <div class="sec-accent"></div>
+  <h2>Jan–Abr 2026: crescimento consistente</h2>
+  <p>O quadrimestre revelou algo extraordinário: mesmo com variações pontuais de lead volume e investimento em marketing, os resultados consolidados permaneceram consistentemente acima da meta — provando que processos bem estruturados geram resultado independentemente de turbulências externas.</p>
+
+  <div class="chart-wrapper">
+    <div class="chart-title">📅 Crescimento Quadrimestral — Faturamento Real vs Meta (Vitale)</div>
+    <svg viewBox="0 0 780 310" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <!-- grid lines + y labels (scale 35k-100k) -->
+  <line x1='75' y1='230' x2='720' y2='230' stroke='#dde3ea' stroke-width='1'/><text x='68' y='234' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$35k</text><line x1='75' y1='184' x2='720' y2='184' stroke='#dde3ea' stroke-width='1'/><text x='68' y='188' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$50k</text><line x1='75' y1='138' x2='720' y2='138' stroke='#dde3ea' stroke-width='1'/><text x='68' y='142' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$65k</text><line x1='75' y1='92' x2='720' y2='92' stroke='#dde3ea' stroke-width='1'/><text x='68' y='96' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$80k</text><line x1='75' y1='30' x2='720' y2='30' stroke='#dde3ea' stroke-width='1'/><text x='68' y='34' text-anchor='end' font-family='DM Sans,sans-serif' font-size='10' fill='#8899AA'>R$100k</text>
+  <!-- Meta Vitale dashed -->
+  <polyline points='150,129.7 310,129.7 470,129.7 630,128.5' fill='none' stroke='#0B2545' stroke-width='1.5' stroke-dasharray='7,4' opacity='0.4'/>
+  <!-- Meta Sorria dashed -->
+  <polyline points='150,175.2 310,175.2 470,175.2 630,174.6' fill='none' stroke='#C9A84C' stroke-width='1.5' stroke-dasharray='7,4' opacity='0.4'/>
+  <!-- Vitale real line -->
+  <polyline points='150,77.4 310,56.5 470,85.1 630,120.5' fill='none' stroke='#0B2545' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/>
+  <circle cx='150' cy='77.4' r='6' fill='#0B2545'/><circle cx='310' cy='56.5' r='6' fill='#0B2545'/><circle cx='470' cy='85.1' r='6' fill='#0B2545'/><circle cx='630' cy='120.5' r='6' fill='#0B2545'/>
+  <!-- Vitale labels -->
+  <text x='150' y='68' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$84,6k</text>
+  <text x='310' y='47' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$91,4k</text>
+  <text x='470' y='76' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$82,1k</text>
+  <text x='630' y='111' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#0B2545'>R$70,6k</text>
+  <!-- Sorria real line -->
+  <polyline points='150,147.2 310,153.7 470,106.6 630,108.8' fill='none' stroke='#C9A84C' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/>
+  <circle cx='150' cy='147.2' r='6' fill='#C9A84C'/><circle cx='310' cy='153.7' r='6' fill='#C9A84C'/><circle cx='470' cy='106.6' r='6' fill='#C9A84C'/><circle cx='630' cy='108.8' r='6' fill='#C9A84C'/>
+  <!-- Sorria labels -->
+  <text x='150' y='165' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$61,9k</text>
+  <text x='310' y='172' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$59,8k</text>
+  <text x='470' y='98' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$75,1k</text>
+  <text x='630' y='127' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' font-weight='700' fill='#C9A84C'>R$74,4k</text>
+  <!-- X labels -->
+  <text x='150' y='252' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Jan/26</text><text x='310' y='252' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Fev/26</text><text x='470' y='252' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Mar/26</text><text x='630' y='252' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Abr/26</text>
+  <!-- Legend -->
+  <line x1='90' y1='278' x2='112' y2='278' stroke='#0B2545' stroke-width='3'/>
+  <circle cx='101' cy='278' r='4' fill='#0B2545'/>
+  <text x='118' y='282' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Vitale (real)</text>
+  <line x1='230' y1='278' x2='252' y2='278' stroke='#C9A84C' stroke-width='3'/>
+  <circle cx='241' cy='278' r='4' fill='#C9A84C'/>
+  <text x='258' y='282' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Sorria Mais (real)</text>
+  <line x1='400' y1='278' x2='422' y2='278' stroke='#0B2545' stroke-width='1.5' stroke-dasharray='6,3' opacity='0.6'/>
+  <text x='428' y='282' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Meta Vitale</text>
+  <line x1='530' y1='278' x2='552' y2='278' stroke='#C9A84C' stroke-width='1.5' stroke-dasharray='6,3' opacity='0.6'/>
+  <text x='558' y='282' font-family='DM Sans,sans-serif' font-size='11' fill='#5A6070'>Meta Sorria Mais</text>
+</svg>
+  </div>
+
+  <div class="pilares">
+    <div class="pilar-card">
+      <div class="pilar-num">90%</div>
+      <div class="pilar-title">Crescimento 1°Tri Vitale</div>
+      <div class="pilar-desc">Faturamento acumulado do 1° trimestre de 2026 vs mesmo período anterior</div>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-num">49%</div>
+      <div class="pilar-title">Crescimento 1°Tri Sorria Mais</div>
+      <div class="pilar-desc">Crescimento consistente mesmo em nicho de maior ticket médio</div>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-num">3</div>
+      <div class="pilar-title">Pilares do Crescimento</div>
+      <div class="pilar-desc">Empreendedor Estratégico · Modelo de Negócio · Produto/Serviço</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 8 — CANAIS
+════════════════════════════════════════════════════════════════ -->
+<section style="background: var(--cinza-claro);">
+  <div class="section-label">08 — Análise por Canal de Vendas</div>
+  <div class="sec-accent"></div>
+  <h2>De onde vem o faturamento?</h2>
+  <p>Entender o canal de origem de cada venda é um dos pilares da consultoria. Isso permite alocar investimento com inteligência e fortalecer o que funciona.</p>
+
+  <h3 style="margin-top:32px">Vitale Implant Center — Abril 2026</h3>
+  <div class="canal-table-wrap"><table class="canal-table">
+    <thead>
+      <tr><th>Canal</th><th>Qtd</th><th>Faturamento</th><th>% Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Recorrência (pacientes)</td><td>12</td><td>R$ 24.788</td><td>35,1%</td></tr>
+      <tr><td>Leads meses anteriores</td><td>3</td><td>R$ 18.000</td><td>25,5%</td></tr>
+      <tr><td>Indicação</td><td>4</td><td>R$ 18.275</td><td>25,9%</td></tr>
+      <tr><td>Leads do mês (Facebook)</td><td>3</td><td>R$ 9.565</td><td>13,6%</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>22</strong></td><td><strong>R$ 70.628</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:36px">Sorria Mais Odonto — Abril 2026</h3>
+  <div class="canal-table-wrap"><table class="canal-table">
+    <thead>
+      <tr><th>Canal</th><th>Qtd</th><th>Faturamento</th><th>% Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Recorrência (pacientes)</td><td>15</td><td>R$ 30.885</td><td>41,5%</td></tr>
+      <tr><td>Indicação</td><td>7</td><td>R$ 30.180</td><td>40,6%</td></tr>
+      <tr><td>Leads meses anteriores</td><td>4</td><td>R$ 13.310</td><td>17,9%</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>26</strong></td><td><strong>R$ 74.375</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="chart-wrapper" style="margin-top:28px">
+    <div class="chart-title">💡 Distribuição de Faturamento por Canal — Consolidado Abril</div>
+    <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <path d='M 175.0 25.0 A 95 95 0 0 1 238.3 190.9 L 213.6 163.3 A 58 58 0 0 0 175.0 62.0 Z' fill='#0B2545'/><path d='M 238.3 190.9 A 95 95 0 0 1 81.9 139.0 L 118.2 131.6 A 58 58 0 0 0 213.6 163.3 Z' fill='#C9A84C'/><path d='M 81.9 139.0 A 95 95 0 0 1 136.7 33.1 L 151.6 66.9 A 58 58 0 0 0 118.2 131.6 Z' fill='#2ECC9A'/><path d='M 136.7 33.1 A 95 95 0 0 1 175.0 25.0 L 175.0 62.0 A 58 58 0 0 0 151.6 66.9 Z' fill='#F4845F'/>
+  <circle cx='175' cy='120' r='58' fill='white'/>
+  <text x='175' y='115' text-anchor='middle' font-family='Playfair Display,serif' font-size='15' font-weight='900' fill='#0B2545'>R$145k</text>
+  <text x='175' y='132' text-anchor='middle' font-family='DM Sans,sans-serif' font-size='10' fill='#5A6070'>Total Abril</text>
+  <!-- legend -->
+  <rect x='295' y='52' width='15' height='15' fill='#0B2545' rx='3'/>
+  <text x='316' y='63' font-family='DM Sans,sans-serif' font-size='12' fill='#5A6070'>Recorrência — R$55.673 (38,4%)</text>
+  <rect x='295' y='82' width='15' height='15' fill='#C9A84C' rx='3'/>
+  <text x='316' y='93' font-family='DM Sans,sans-serif' font-size='12' fill='#5A6070'>Indicação — R$48.455 (33,4%)</text>
+  <rect x='295' y='112' width='15' height='15' fill='#2ECC9A' rx='3'/>
+  <text x='316' y='123' font-family='DM Sans,sans-serif' font-size='12' fill='#5A6070'>Leads Anteriores — R$31.310 (21,6%)</text>
+  <rect x='295' y='142' width='15' height='15' fill='#F4845F' rx='3'/>
+  <text x='316' y='153' font-family='DM Sans,sans-serif' font-size='12' fill='#5A6070'>Leads do Mês — R$9.565 (6,6%)</text>
+</svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEÇÃO 9 — SOBRE O CONSULTOR
+════════════════════════════════════════════════════════════════ -->
+<section class="sec-dark">
+  <div class="section-label">09 — Quem é Fernando Macedo</div>
+  <div class="sec-accent"></div>
+  <h2>Mais de 15 anos gerando resultados concretos</h2>
+  <p>Fernando Giovanini Macedo é executivo com mais de 15 anos de experiência em gestão empresarial, operações e expansão comercial, atuando em empresas de grande porte no setor educacional. Especialista em transformar estratégias em resultados concretos.</p>
+
+  <div class="grid-entregas" style="margin-top:32px">
+    <div class="entrega-card" style="background:rgba(255,255,255,0.05); border-left-color:var(--dourado)">
+      <div class="entrega-icon">🎯</div>
+      <h4 style="color:var(--branco)">Planejamento Estratégico & Comercial</h4>
+      <p style="color:rgba(255,255,255,0.55)">Estruturação de metas, indicadores e processos que geram crescimento sustentável.</p>
+    </div>
+    <div class="entrega-card" style="background:rgba(255,255,255,0.05); border-left-color:var(--dourado)">
+      <div class="entrega-icon">📊</div>
+      <h4 style="color:var(--branco)">Indicadores & Processos</h4>
+      <p style="color:rgba(255,255,255,0.55)">Implantação de DRE, fluxo de caixa, CRM e dashboards de marketing e vendas.</p>
+    </div>
+    <div class="entrega-card" style="background:rgba(255,255,255,0.05); border-left-color:var(--dourado)">
+      <div class="entrega-icon">👥</div>
+      <h4 style="color:var(--branco)">Gestão de Pessoas</h4>
+      <p style="color:rgba(255,255,255,0.55)">Cultura, contratação, avaliação de desempenho e formação de líderes.</p>
+    </div>
+    <div class="entrega-card" style="background:rgba(255,255,255,0.05); border-left-color:var(--dourado)">
+      <div class="entrega-icon">🚀</div>
+      <h4 style="color:var(--branco)">Expansão & Novos Negócios</h4>
+      <p style="color:rgba(255,255,255,0.55)">Estruturação de franquias, novos modelos de receita e consultoria educacional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     RODAPÉ
+════════════════════════════════════════════════════════════════ -->
+<div class="rodape">
+  <div class="rodape-logo">Fernando Macedo</div>
+  <p>Consultoria & Mentoria Empresarial</p>
+  <p style="margin-top:20px; font-size:0.75rem">Resultados reais · Processos que funcionam · Crescimento sustentável</p>
+</div>
+
+</div><!-- /page -->
+
+
+</body>
+</html>

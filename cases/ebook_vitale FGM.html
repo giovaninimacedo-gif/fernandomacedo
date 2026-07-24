@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Case de Sucesso — Grupo Vitale Educação</title>
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy2: #1B3A6B;
+    --gold: #C9A84C;
+    --goldd: #E8C97A;
+    --white: #FFFFFF;
+    --lgray: #F4F6F9;
+    --dgray: #5A6070;
+    --green: #1a7a4a;
+    --red: #C0392B;
+    --dark: #0F1F3D;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--lgray);
+    color: #222;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ── CAPA ── */
+  .cover {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 60%, #1a0a2e 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 28px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content:'';
+    position:absolute; top:-80px; right:-80px;
+    width:300px; height:300px;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .cover::after {
+    content:'';
+    position:absolute; bottom:-60px; left:-60px;
+    width:240px; height:240px;
+    background: radial-gradient(circle, rgba(27,58,107,0.5) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .cover-tag {
+    display:inline-block;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--goldd);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+  .cover-main { margin-top: 32px; }
+  .cover-label {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .cover-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .cover-title span { color: var(--gold); }
+  .cover-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+  .cover-company {
+    margin-top: 28px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+  .cover-company .name {
+    font-size: 15px; font-weight: 700; color: var(--white);
+  }
+  .cover-company .sector {
+    font-size: 12px; color: var(--goldd); margin-top: 3px;
+  }
+  .cover-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 32px;
+    position: relative; z-index:1;
+  }
+  .cover-metric {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    border-top: 2px solid rgba(201,168,76,0.4);
+  }
+  .cover-metric .val {
+    font-size: 18px; font-weight: 800; color: var(--gold);
+    line-height: 1.1;
+  }
+  .cover-metric .lbl {
+    font-size: 9.5px; color: rgba(255,255,255,0.55);
+    margin-top: 4px; line-height: 1.3;
+  }
+  .cover-footer {
+    margin-top: 36px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    position: relative; z-index:1;
+  }
+  .cover-footer strong { color: var(--gold); }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--white);
+    margin: 0;
+    padding: 32px 24px;
+    border-bottom: 1px solid #eee;
+  }
+  .section-alt { background: var(--lgray); }
+  .section-dark {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .section-dark2 { background: var(--navy2); color: var(--white); }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-tag.blue {
+    background: var(--navy2);
+    color: var(--white);
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .section-title.white { color: var(--white); }
+  .section-title span { color: var(--gold); }
+  .section-sub {
+    font-size: 13px;
+    color: var(--dgray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .section-sub.white { color: rgba(255,255,255,0.7); }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content:'';
+    position:absolute; left:8px; top:0; bottom:0;
+    width:2px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+  }
+  .tl-item { position:relative; margin-bottom:28px; }
+  .tl-dot {
+    position:absolute; left:-24px; top:3px;
+    width:14px; height:14px; border-radius:50%;
+    background: var(--gold);
+    border:2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .tl-date {
+    font-size:10px; font-weight:700; color:var(--gold);
+    letter-spacing:1.5px; text-transform:uppercase; margin-bottom:4px;
+  }
+  .tl-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:4px; }
+  .tl-desc { font-size:12.5px; color:rgba(255,255,255,0.65); line-height:1.5; }
+
+  /* ── KPI CARDS ── */
+  .kpi-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+  .kpi-card {
+    background:var(--navy);
+    border-radius:12px;
+    padding:18px 14px;
+    text-align:center;
+    border-top:3px solid var(--gold);
+  }
+  .kpi-card.full { grid-column:1/-1; }
+  .kpi-card.green-top { border-top-color:#2ECC71; }
+  .kpi-val {
+    font-size:28px; font-weight:800; color:var(--gold);
+    line-height:1; margin-bottom:4px;
+  }
+  .kpi-val.big { font-size:36px; }
+  .kpi-val.green { color:#2ECC71; }
+  .kpi-lbl { font-size:11px; color:rgba(255,255,255,0.6); line-height:1.3; }
+  .kpi-sub { font-size:10px; color:var(--goldd); margin-top:3px; }
+
+  /* ── BAR CHART ── */
+  .chart-wrap { margin-top:16px; }
+  .chart-title {
+    font-size:11px; font-weight:700; color:var(--gold);
+    letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;
+  }
+  .bar-row { display:flex; align-items:center; margin-bottom:10px; gap:8px; }
+  .bar-label { font-size:11px; color:rgba(255,255,255,0.7); width:80px; flex-shrink:0; text-align:right; }
+  .bar-track { flex:1; background:rgba(255,255,255,0.08); border-radius:4px; height:24px; overflow:hidden; position:relative; }
+  .bar-fill {
+    height:100%; border-radius:4px;
+    display:flex; align-items:center; padding-left:8px;
+    transition: width 0.8s ease;
+  }
+  .bar-fill.gold { background:linear-gradient(90deg, var(--gold), var(--goldd)); }
+  .bar-fill.green { background:linear-gradient(90deg, #1a7a4a, #2ECC71); }
+  .bar-fill.red { background:linear-gradient(90deg, #C0392B, #E74C3C); }
+  .bar-fill.blue { background:linear-gradient(90deg, var(--navy2), #2980B9); }
+  .bar-num { font-size:11px; font-weight:700; color:var(--navy); }
+
+  /* ── DONUT (CSS only) ── */
+  .donut-wrap { display:flex; align-items:center; gap:20px; margin-top:16px; }
+  .donut {
+    position:relative; width:120px; height:120px; flex-shrink:0;
+  }
+  .donut svg { width:100%; height:100%; transform:rotate(-90deg); }
+  .donut-center {
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    text-align:center;
+  }
+  .donut-center .val { font-size:22px; font-weight:800; color:var(--gold); }
+  .donut-center .lbl { font-size:9px; color:rgba(255,255,255,0.6); }
+  .donut-legend { flex:1; }
+  .legend-item { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .legend-text { font-size:12px; color:rgba(255,255,255,0.75); }
+  .legend-val { font-size:12px; font-weight:700; color:var(--white); margin-left:auto; }
+
+  /* ── WATERFALL ── */
+  .waterfall { margin-top:16px; }
+  .wf-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .wf-label { font-size:11px; color:rgba(255,255,255,0.7); width:130px; flex-shrink:0; }
+  .wf-bar-wrap { flex:1; display:flex; align-items:center; gap:6px; }
+  .wf-bar {
+    height:28px; border-radius:4px;
+    display:flex; align-items:center; justify-content:flex-end;
+    padding:0 8px;
+    font-size:11px; font-weight:700;
+  }
+  .wf-neg { background:linear-gradient(90deg,#7B1818,#C0392B); color:#fff; }
+  .wf-pos { background:linear-gradient(90deg,#1a5c33,#27AE60); color:#fff; }
+  .wf-action { background:linear-gradient(90deg, var(--navy2), var(--gold)); color:var(--navy); }
+  .wf-result { background:linear-gradient(90deg, #C9A84C, #E8C97A); color:var(--navy); }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background:linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+    border-radius:16px;
+    padding:24px 20px;
+    margin-top:12px;
+    border:1px solid rgba(201,168,76,0.3);
+    position:relative;
+    overflow:hidden;
+  }
+  .result-card::before {
+    content:'';
+    position:absolute; top:-40px; right:-40px;
+    width:150px; height:150px;
+    background:radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .result-card .rc-label {
+    font-size:10px; font-weight:700; color:var(--gold);
+    letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;
+  }
+  .result-card .rc-val {
+    font-size:42px; font-weight:900; color:var(--white); line-height:1;
+  }
+  .result-card .rc-val span { color:var(--gold); }
+  .result-card .rc-sub { font-size:12px; color:rgba(255,255,255,0.6); margin-top:6px; }
+
+  /* ── PROCESS STEPS ── */
+  .steps { margin-top:8px; }
+  .step {
+    display:flex; gap:14px; margin-bottom:20px; align-items:flex-start;
+  }
+  .step-num {
+    width:36px; height:36px; border-radius:50%;
+    background:var(--gold); color:var(--navy);
+    font-size:14px; font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .step-content .step-title {
+    font-size:14px; font-weight:700; color:var(--white); margin-bottom:3px;
+  }
+  .step-content .step-desc {
+    font-size:12.5px; color:rgba(255,255,255,0.65); line-height:1.5;
+  }
+  .step-content .step-result {
+    display:inline-block; margin-top:6px;
+    background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3);
+    color:var(--goldd); font-size:11px; font-weight:700;
+    padding:3px 10px; border-radius:20px;
+  }
+
+  /* ── PILL BADGE ── */
+  .pill {
+    display:inline-block;
+    background:rgba(201,168,76,0.15);
+    border:1px solid rgba(201,168,76,0.3);
+    color:var(--goldd);
+    font-size:11px; font-weight:600;
+    padding:4px 12px; border-radius:20px;
+    margin:4px 4px 4px 0;
+  }
+
+  /* ── QUOTE ── */
+  .quote-block {
+    background:var(--dark);
+    border-left:4px solid var(--gold);
+    border-radius:0 12px 12px 0;
+    padding:20px 18px;
+    margin-top:20px;
+  }
+  .quote-text {
+    font-size:14px; font-style:italic; color:var(--white);
+    line-height:1.6; margin-bottom:10px;
+  }
+  .quote-text::before { content:'"'; color:var(--gold); font-size:24px; }
+  .quote-text::after  { content:'"'; color:var(--gold); font-size:24px; }
+  .quote-author { font-size:11px; font-weight:700; color:var(--goldd); }
+
+  /* ── AREA CARDS ── */
+  .area-card {
+    background:var(--dark);
+    border-radius:14px;
+    padding:20px 18px;
+    margin-bottom:14px;
+    border-top:3px solid var(--gold);
+  }
+  .area-card.green-border { border-top-color:#2ECC71; }
+  .area-card.blue-border  { border-top-color:#3498DB; }
+  .area-card.amber-border { border-top-color:#E67E22; }
+  .area-head {
+    display:flex; align-items:center; gap:10px; margin-bottom:12px;
+  }
+  .area-icon {
+    width:38px; height:38px; border-radius:10px;
+    background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3);
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px; flex-shrink:0;
+  }
+  .area-title { font-size:14px; font-weight:700; color:var(--white); }
+  .area-period { font-size:11px; color:var(--goldd); margin-top:1px; }
+  .area-items { list-style:none; }
+  .area-items li {
+    font-size:12.5px; color:rgba(255,255,255,0.7);
+    padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+    padding-left:16px; position:relative; line-height:1.4;
+  }
+  .area-items li::before {
+    content:'→'; position:absolute; left:0;
+    color:var(--gold); font-size:11px; top:7px;
+  }
+  .area-result {
+    margin-top:12px;
+    background:rgba(201,168,76,0.1);
+    border-radius:8px;
+    padding:10px 14px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .area-result .r-icon { font-size:16px; }
+  .area-result .r-text { font-size:12px; font-weight:700; color:var(--goldd); line-height:1.3; }
+
+  /* ── COMPARATIVO ANTES/DEPOIS ── */
+  .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+  .compare-col {
+    border-radius:12px; padding:16px 14px;
+  }
+  .compare-col.before { background:#1a0808; border:1px solid rgba(192,57,43,0.3); }
+  .compare-col.after  { background:#081a0f; border:1px solid rgba(39,174,96,0.3); }
+  .compare-head {
+    font-size:10px; font-weight:800; letter-spacing:1.5px;
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .compare-head.red  { color:#E74C3C; }
+  .compare-head.green{ color:#2ECC71; }
+  .compare-item {
+    font-size:11.5px; color:rgba(255,255,255,0.65);
+    margin-bottom:6px; padding-left:12px; position:relative; line-height:1.4;
+  }
+  .compare-item::before { content:'✕'; position:absolute; left:0; color:#E74C3C; font-size:9px; top:2px; }
+  .compare-item.check::before { content:'✓'; color:#2ECC71; }
+
+  /* ── GAUGE ── */
+  .gauge-wrap { text-align:center; padding:20px 0 10px; }
+  .gauge-svg { width:200px; height:110px; }
+  .gauge-val { font-size:32px; font-weight:900; fill:var(--white); }
+  .gauge-lbl { font-size:11px; fill:rgba(255,255,255,0.6); }
+
+  /* ── NUMBER LINE ── */
+  .numline {
+    display:flex; align-items:center; gap:0;
+    margin:20px 0; position:relative;
+  }
+  .nl-point {
+    text-align:center; flex:1;
+    position:relative; z-index:1;
+  }
+  .nl-val {
+    font-size:20px; font-weight:900;
+    white-space:nowrap; display:block;
+    -webkit-hyphens:none; hyphens:none;
+  }
+  .nl-val.red  { color:#E74C3C; }
+  .nl-val.gold { color:var(--gold); }
+  .nl-val.green{ color:#2ECC71; }
+  .nl-lbl { font-size:10px; color:rgba(255,255,255,0.55); margin-top:3px; }
+  .nl-arrow {
+    flex:0 0 28px; text-align:center;
+    font-size:20px; color:var(--gold);
+    position:relative; z-index:1;
+  }
+  .nl-track { display:none; }
+
+  /* ── MINI BAR ── */
+  .mini-bars { margin-top:14px; }
+  .mini-bar-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .mini-bar-lbl { font-size:11px; color:var(--dgray); width:100px; flex-shrink:0; }
+  .mini-bar-track { flex:1; background:#E0E5ED; border-radius:4px; height:20px; overflow:hidden; }
+  .mini-bar-fill {
+    height:100%; border-radius:4px;
+    display:flex; align-items:center; justify-content:flex-end; padding-right:8px;
+  }
+  .mini-bar-fill span { font-size:11px; font-weight:700; color:var(--navy); }
+
+  /* ── ROI CARD ── */
+  .roi-wrap {
+    background:linear-gradient(135deg,var(--gold) 0%,var(--goldd) 100%);
+    border-radius:16px; padding:28px 22px; text-align:center; margin-top:16px;
+  }
+  .roi-label { font-size:11px; font-weight:800; letter-spacing:2px; color:var(--navy); text-transform:uppercase; margin-bottom:6px; }
+  .roi-val { font-size:56px; font-weight:900; color:var(--navy); line-height:1; }
+  .roi-sub { font-size:12px; color:rgba(11,37,69,0.7); margin-top:6px; }
+
+  /* ── FOOTER ── */
+  .ebook-footer {
+    background:var(--navy);
+    padding:40px 24px 48px;
+    text-align:center;
+  }
+  .footer-name { font-size:18px; font-weight:800; color:var(--white); margin-bottom:4px; }
+  .footer-role { font-size:12px; color:var(--goldd); margin-bottom:20px; }
+  .footer-contacts { margin-top:16px; }
+  .footer-contact {
+    font-size:12px; color:rgba(255,255,255,0.6);
+    margin-bottom:6px;
+  }
+  .footer-contact strong { color:var(--white); }
+  .footer-divider {
+    width:40px; height:3px; background:var(--gold);
+    margin:20px auto;
+  }
+  .footer-note {
+    font-size:10px; color:rgba(255,255,255,0.3);
+    line-height:1.5;
+  }
+  .disclaimer {
+    font-size:9px; color:rgba(255,255,255,0.25);
+    margin-top:16px; line-height:1.6;
+    padding:10px 14px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ CAPA ══════════════════════════════════════════════════════════════ -->
+<section class="cover">
+  <div>
+    <div class="cover-tag">Case de Sucesso · Confidencial</div>
+    <div class="cover-main">
+      <div class="cover-label">Direção &amp; Reestruturação Empresarial</div>
+      <div class="cover-title">De crise<br>a <span>crescimento</span><br>sustentável</div>
+      <div class="cover-subtitle">Como uma empresa de educação reverteu R$200 mil negativos, ampliou a margem bruta em 20 pontos percentuais e cresceu 49% em faturamento — estruturando operações, comercial e pessoas em 3 anos.</div>
+    </div>
+    <div class="cover-company">
+      <div class="name">Grupo Vitale Educação*</div>
+      <div class="sector">Atualização, Especialização &amp; Qualificação Profissional</div>
+    </div>
+  </div>
+  <div>
+    <div class="cover-metrics">
+      <div class="cover-metric">
+        <div class="val">+R$570k</div>
+        <div class="lbl">Reversão<br>de caixa</div>
+      </div>
+      <div class="cover-metric">
+        <div class="val">R$10,3M</div>
+        <div class="lbl">Faturamento<br>2024 (+49%)</div>
+      </div>
+      <div class="cover-metric">
+        <div class="val">+R$2,7M</div>
+        <div class="lbl">Royalties<br>sistema ensino</div>
+      </div>
+    </div>
+    <div class="cover-footer">
+      <strong>Fernando Giovanini Macedo</strong><br>
+      Diretor de Operações · Consultor Empresarial<br><br>
+      *Nome fictício · Dados reais preservados<br>Atuação: fev/2022 – presente
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTEXTO ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">O Contexto</div>
+  <div class="section-title white">Uma empresa com potencial travada por falta de gestão</div>
+  <div class="section-sub white">O Grupo Vitale Educação chegou com produto sólido, time dedicado e mercado em crescimento. Mas sem estrutura para sustentar o que havia construído.</div>
+
+  <div class="compare-grid">
+    <div class="compare-col before">
+      <div class="compare-head red">Antes</div>
+      <div class="compare-item">Caixa negativo em -R$200k</div>
+      <div class="compare-item">Margem bruta de apenas 30%</div>
+      <div class="compare-item">ERP financeiro com erros</div>
+      <div class="compare-item">Sem fluxo de caixa projetado</div>
+      <div class="compare-item">Time comercial sem processo</div>
+      <div class="compare-item">Contratos manuais e lentos</div>
+      <div class="compare-item">Sem plano de cargos e metas</div>
+      <div class="compare-item">Gestão de pessoas informal</div>
+    </div>
+    <div class="compare-col after">
+      <div class="compare-head green">Depois</div>
+      <div class="compare-item check">Caixa em +R$370k (+R$570k)</div>
+      <div class="compare-item check">Margem bruta de 50% (+20 p.p.)</div>
+      <div class="compare-item check">ERP saneado e confiável</div>
+      <div class="compare-item check">Fluxo projetado 30 dias</div>
+      <div class="compare-item check">Funil CRM Salesforce ativo</div>
+      <div class="compare-item check">Contratos digitais automáticos</div>
+      <div class="compare-item check">Comissão variável por meta</div>
+      <div class="compare-item check">Processos de RH estruturados</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TIMELINE ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark2">
+  <div class="section-tag">Linha do Tempo</div>
+  <div class="section-title white">3+ anos · 3 cargos · 6 frentes de transformação</div>
+  <div class="section-sub white">De Gestor de Projetos a Diretor de Operações — construindo resultado a cada cargo, sem paralisar a operação.</div>
+
+  <div class="timeline" style="margin-top:24px;">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mar/2022 — Gestor de Projetos</div>
+      <div class="tl-title">🔧 Aceleração Operacional e Base de Processos</div>
+      <div class="tl-desc">Aceleração de projetos, otimização de processos e comunicação interna. Elaboração de manuais e POPs. Revisão e adequação de PPCs submetidos ao e-MEC e CRO/CFO. Implementação do CRM Salesforce — automatizando vendas e personalizando o relacionamento com o cliente.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Fev/2023 — Gerente Corporativo · Adm. Geral</div>
+      <div class="tl-title">📚 Pedagógico, Comercial e Gestão de Pessoas</div>
+      <div class="tl-desc">Implantação do setor pedagógico: processos acadêmicos definidos, desenvolvimento de PPCs e gestão educacional estratégica — gerando R$2MM de economia em 24 meses. Estruturação do setor comercial com funil de vendas, indicadores e análise de sazonalidade. Implantação do ciclo completo de gestão de pessoas: contratação, integração, recompensa, desenvolvimento, retenção e monitoramento.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Desde 2022 — Em paralelo</div>
+      <div class="tl-title">🚀 Projeto Vitale — Sistema de Ensino Odontológico</div>
+      <div class="tl-desc">Implantação e escala nacional do sistema de ensino odontológico, 45 projetos vendidos, R$2,7M em royalties.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Abr/2024 — Diretor de Operações</div>
+      <div class="tl-title">🏆 Plano de Cargos, Automações e +49% Faturamento</div>
+      <div class="tl-desc">Plano de cargos e salários com remuneração variável, comissões e premiações atreladas a metas. Automação de contratos (R$48k/ano) e cobranças (integração plataforma + CRM). Resultado: de -13% para +70% nas vendas à vista e no cartão, e +49% no faturamento anual em 2024 (R$6,9M → R$10,3M).</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mai/2025 — Diretor de Operações (cont.)</div>
+      <div class="tl-title">💰 Reestruturação Financeira em Cenário Crítico</div>
+      <div class="tl-desc">Saneamento do ERP financeiro, criação de fluxo de caixa projetado, renegociação de contratos de parceria (margem 30%→50%), corte de despesas sem retorno, rateio correto de custos por marca e quitação de empréstimos. Resultado: reversão de -R$200k para +R$370k em 12 meses.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINANCEIRO ══════════════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">Financeiro · Mai/2025–Mai/2026</div>
+  <div class="section-title white">De -R$200k para <span>+R$370k</span></div>
+  <div class="section-sub white">Reversão total de R$570 mil em posição de caixa em 12 meses (mai/2025–mai/2026) — sem corte de time, sem redução de produto.</div>
+
+  <!-- Number line -->
+  <div class="numline">
+    <div class="nl-point" style="position:relative;z-index:2;">
+      <div class="nl-val red" style="white-space:nowrap;">&#x2011;R$200k</div>
+      <div class="nl-lbl">Ponto inicial<br>2025</div>
+    </div>
+    <div class="nl-arrow" style="position:relative;z-index:2;">→</div>
+    <div class="nl-point" style="position:relative;z-index:2;">
+      <div class="nl-val gold">ZERO</div>
+      <div class="nl-lbl">Equilíbrio<br>6 meses</div>
+    </div>
+    <div class="nl-arrow" style="position:relative;z-index:2;">→</div>
+    <div class="nl-point" style="position:relative;z-index:2;">
+      <div class="nl-val green">+R$370k</div>
+      <div class="nl-lbl">Resultado<br>12 meses</div>
+    </div>
+  </div>
+
+  <!-- Waterfall das ações -->
+  <div class="chart-wrap">
+    <div class="chart-title">Contribuição de cada ação (estimado)</div>
+    <div class="bar-row">
+      <div class="bar-label">Posição inicial</div>
+      <div class="bar-track">
+        <div class="bar-fill red" style="width:100%"><span class="bar-num">-R$200k</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Margem 30→50%</div>
+      <div class="bar-track">
+        <div class="bar-fill gold" style="width:72%"><span class="bar-num">+R$240k</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Corte despesas</div>
+      <div class="bar-track">
+        <div class="bar-fill gold" style="width:48%"><span class="bar-num">+R$160k</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Quit. empréstimos</div>
+      <div class="bar-track">
+        <div class="bar-fill green" style="width:90%"><span class="bar-num">+R$300k</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label" style="font-weight:700;color:#fff">Posição final</div>
+      <div class="bar-track">
+        <div class="bar-fill green" style="width:100%"><span class="bar-num" style="color:#fff">+R$370k ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Margem bruta -->
+  <div class="chart-wrap" style="margin-top:28px;">
+    <div class="chart-title">Evolução da Margem Bruta</div>
+    <div class="bar-row">
+      <div class="bar-label">Antes (2025)</div>
+      <div class="bar-track">
+        <div class="bar-fill red" style="width:30%"><span class="bar-num">30%</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Depois (2026)</div>
+      <div class="bar-track">
+        <div class="bar-fill green" style="width:50%"><span class="bar-num" style="color:#fff">50%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-grid" style="margin-top:24px;">
+    <div class="kpi-card">
+      <div class="kpi-val">+20 p.p.</div>
+      <div class="kpi-lbl">Margem bruta<br>30% → 50%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">R$48k</div>
+      <div class="kpi-lbl">Economia anual<br>automação contratos</div>
+    </div>
+    <div class="kpi-card full" style="border-top-color:#2ECC71;">
+      <div class="kpi-val big green">R$570k</div>
+      <div class="kpi-lbl">Reversão total na posição de caixa em 12 meses</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AÇÕES FINANCEIRAS ══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="section-tag blue">O Que Foi Feito</div>
+  <div class="section-title">As 5 alavancas da reestruturação financeira</div>
+
+  <div class="steps" style="margin-top:20px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title" style="color:var(--navy)">Saneamento do ERP Financeiro</div>
+        <div class="step-desc" style="color:var(--dgray)">Auditoria completa dos lançamentos, correção de categorizações incorretas e criação de relatórios de fluxo de caixa projetado para os próximos 30 dias.</div>
+        <span class="step-result" style="background:rgba(11,37,69,0.08);border-color:rgba(11,37,69,0.2);color:var(--navy)">Visibilidade financeira real pela primeira vez</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title" style="color:var(--navy)">Renegociação de Contratos de Parceria</div>
+        <div class="step-desc" style="color:var(--dgray)">Revisão completa dos splits com coordenadores e professores, adequação fiscal, redução de impostos e reestruturação dos percentuais de pagamento.</div>
+        <span class="step-result" style="background:rgba(11,37,69,0.08);border-color:rgba(11,37,69,0.2);color:var(--navy)">Margem bruta: 30% → 50%</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title" style="color:var(--navy)">Corte de Despesas sem Retorno</div>
+        <div class="step-desc" style="color:var(--dgray)">Mapeamento de todos os centros de custo por marca. Eliminação de despesas que não geravam resultado mensurável. Rateio correto por unidade de negócio.</div>
+        <span class="step-result" style="background:rgba(11,37,69,0.08);border-color:rgba(11,37,69,0.2);color:var(--navy)">Estrutura de custos enxuta e rastreável</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title" style="color:var(--navy)">Quitação Estratégica de Empréstimos</div>
+        <div class="step-desc" style="color:var(--dgray)">Priorização e quitação dos empréstimos por ordem de custo financeiro, liberando fluxo de caixa e reduzindo o custo fixo mensal progressivamente.</div>
+        <span class="step-result" style="background:rgba(11,37,69,0.08);border-color:rgba(11,37,69,0.2);color:var(--navy)">Capacidade de investimento restaurada</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title" style="color:var(--navy)">Automação de Contratos e Cobranças</div>
+        <div class="step-desc" style="color:var(--dgray)">Implantação de processos digitais para emissão, assinatura e gestão de contratos. Integração entre plataforma de pagamento e CRM para automação de cobranças.</div>
+        <span class="step-result" style="background:rgba(11,37,69,0.08);border-color:rgba(11,37,69,0.2);color:var(--navy)">R$48.000 economizados por ano</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMERCIAL ══════════════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">Comercial · 2023–2024</div>
+  <div class="section-title white">Do improviso ao <span>processo</span></div>
+  <div class="section-sub white">Time expandido, CRM implantado, funil estruturado. A empresa passou a vender com método — não com sorte.</div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Crescimento de Faturamento — Valores Reais</div>
+    <div class="bar-row">
+      <div class="bar-label">2023</div>
+      <div class="bar-track">
+        <div class="bar-fill gold" style="width:67%"><span class="bar-num">R$6,9M</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label" style="font-weight:700;color:#fff">2024 ✦</div>
+      <div class="bar-track">
+        <div class="bar-fill green" style="width:100%"><span class="bar-num" style="color:#fff">R$10,3M  (+49%)</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;background:rgba(39,174,96,0.08);border-radius:10px;padding:14px 16px;border-left:3px solid #2ECC71;">
+    <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1px;margin-bottom:6px;">VARIAÇÃO REAL 2023 → 2024</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="text-align:center;">
+        <div style="font-size:13px;font-weight:800;color:rgba(255,255,255,0.7);">R$ 6.901.071</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.45);margin-top:2px;">2023</div>
+      </div>
+      <div style="font-size:22px;color:var(--gold);">→</div>
+      <div style="text-align:center;">
+        <div style="font-size:13px;font-weight:800;color:#2ECC71;">R$ 10.284.331</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.45);margin-top:2px;">2024</div>
+      </div>
+      <div style="text-align:center;background:rgba(39,174,96,0.15);border-radius:8px;padding:8px 12px;border:1px solid rgba(39,174,96,0.3);">
+        <div style="font-size:20px;font-weight:900;color:#2ECC71;">+49%</div>
+        <div style="font-size:9px;color:rgba(255,255,255,0.5);">crescimento</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funil CRM -->
+  <div class="chart-wrap" style="margin-top:28px;">
+    <div class="chart-title">Funil CRM Salesforce — Indicadores por Etapa</div>
+    <div style="position:relative;">
+      <div style="background:linear-gradient(to bottom right,var(--navy2),var(--dark));border-radius:12px;overflow:hidden;">
+        <div style="padding:12px 16px 8px;background:rgba(201,168,76,0.08);border-bottom:1px solid rgba(201,168,76,0.15);">
+          <div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:1.5px;">LEAD</div>
+          <div style="font-size:20px;font-weight:800;color:var(--white);">100% do volume</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);">Todos os canais unificados no CRM</div>
+        </div>
+        <div style="padding:12px 16px 8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:10px;color:var(--goldd);font-weight:700;letter-spacing:1px;">QUALIFICAÇÃO</div>
+          <div style="font-size:17px;font-weight:700;color:var(--white);">Análise de sazonalidade e perfil</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);">Oferta certa no momento certo</div>
+        </div>
+        <div style="padding:12px 16px 8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:10px;color:var(--goldd);font-weight:700;letter-spacing:1px;">PROPOSTA</div>
+          <div style="font-size:17px;font-weight:700;color:var(--white);">Processo padronizado</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);">Templates e scripts definidos</div>
+        </div>
+        <div style="padding:12px 16px 12px;background:rgba(39,174,96,0.08);">
+          <div style="font-size:10px;color:#2ECC71;font-weight:700;letter-spacing:1px;">FECHAMENTO</div>
+          <div style="font-size:17px;font-weight:700;color:var(--white);">+49% em 2024</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);">Resultado do processo estruturado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-grid" style="margin-top:20px;">
+    <div class="kpi-card">
+      <div class="kpi-val">+70%</div>
+      <div class="kpi-lbl">Vendas à vista e<br>cartão (-13%→+70%)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">+49%</div>
+      <div class="kpi-lbl">Faturamento<br>anual 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CARGOS E SALÁRIOS ═══════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="section-tag">RH &amp; Remuneração · 2024</div>
+  <div class="section-title">Plano de cargos que<br>move o time</div>
+  <div class="section-sub">Sistema de remuneração variável com comissões, bonificações e premiações atreladas a metas desafiadoras.</div>
+
+  <div class="area-card" style="margin-top:16px;">
+    <div class="area-head">
+      <div class="area-icon">🎯</div>
+      <div>
+        <div class="area-title">Estrutura de Remuneração Variável</div>
+        <div class="area-period">Implementado em 2024</div>
+      </div>
+    </div>
+    <ul class="area-items">
+      <li>Comissão comercial por split de pagamento</li>
+      <li>Consultor recebe no ato da venda — reduz tributação da empresa</li>
+      <li>Bonificações atreladas a metas desafiadoras por função</li>
+      <li>Premiações para top performers por período</li>
+      <li>Metas individuais por cargo com critérios claros</li>
+    </ul>
+    <div class="area-result">
+      <div class="r-icon">📈</div>
+      <div class="r-text">de -13% para +70% nas vendas à vista e no cartão em curto prazo</div>
+    </div>
+  </div>
+
+  <div class="mini-bars" style="margin-top:20px;">
+    <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;">Impacto por dimensão</div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Motivação</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:90%;background:linear-gradient(90deg,var(--navy2),var(--gold));">
+          <span>Alta</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Vendas à vista</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:100%;background:linear-gradient(90deg,var(--green),#27AE60);">
+          <span>+70%</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Caixa imediato</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--navy2),var(--gold));">
+          <span>Otimizado</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Tributação</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:75%;background:linear-gradient(90deg,#1a7a4a,#2ECC71);">
+          <span>Reduzida</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJETO SISTEMA DE ENSINO ══════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">Sistema de Ensino · Desde 2022</div>
+  <div class="section-title white">Projeto <span>Vitale Odonto</span></div>
+  <div class="section-sub white">45 projetos vendidos desde 2022, R$2,7M em royalties.</div>
+
+  <div class="result-card">
+    <div class="rc-label">Resultado acumulado 2022–2024</div>
+    <div class="rc-val"><span>45</span> projetos</div>
+    <div class="rc-sub">vendidos desde 2022 · expansão nacional</div>
+  </div>
+
+  <div class="kpi-grid" style="margin-top:16px;">
+    <div class="kpi-card full">
+      <div class="kpi-val">R$2,7M</div>
+      <div class="kpi-lbl">Royalties acumulados — Sistema de Ensino</div>
+    </div>
+
+    <div class="kpi-card full" style="text-align:center;">
+      <div class="kpi-val">45</div>
+      <div class="kpi-lbl">Projetos vendidos<br>Escala nacional 2022–2026</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap" style="margin-top:24px;">
+    <div class="chart-title">Crescimento de Projetos Vendidos</div>
+    <div class="bar-row">
+      <div class="bar-label">2022</div>
+      <div class="bar-track">
+        <div class="bar-fill blue" style="width:25%;min-width:80px"><span class="bar-num" style="color:#fff">Lançamento</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">2024–2025</div>
+      <div class="bar-track">
+        <div class="bar-fill gold" style="width:65%"><span class="bar-num">Escala</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label" style="font-weight:700;color:#fff">2026 ✦</div>
+      <div class="bar-track">
+        <div class="bar-fill green" style="width:100%"><span class="bar-num" style="color:#fff">45 projetos · R$2,7M</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps" style="margin-top:28px;">
+    <div class="step">
+      <div class="step-num" style="font-size:18px;">📚</div>
+      <div class="step-content">
+        <div class="step-title">Setor Acadêmico do Zero</div>
+        <div class="step-desc">Processos acadêmicos definidos, PPCs estruturados e submetidos ao e-MEC, elaboração de portaria, desenvolvimento pedagógico estratégico. A criação do setor acadêmico não apenas trouxe uma economia significativa para o grupo na ordem de milhões com certificações, mas também abriu novas oportunidades para a expansão dos modelos de negócios — e o sistema de ensino é um destes modelos.</div>
+        <span class="step-result">Economia de +R$2MM em 24 meses</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num" style="font-size:18px;">🔧</div>
+      <div class="step-content">
+        <div class="step-title">Processos e Manuais de Operação</div>
+        <div class="step-desc">Implantação de processos, elaboração de manuais e POPs (Procedimentos Operacionais Padrão), mantendo qualidade em produtos e serviços.</div>
+        <span class="step-result">Qualidade padronizada nos 45 projetos do sistema</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num" style="font-size:18px;">💻</div>
+      <div class="step-content">
+        <div class="step-title">CRM Salesforce Implantado</div>
+        <div class="step-desc">Automatização do processo de vendas, otimização do atendimento e personalização do relacionamento com o cliente em escala nacional.</div>
+        <span class="step-result">Processo comercial escalável</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GESTÃO DE PESSOAS ══════════════════════════════════════════════════ -->
+<section class="section section-dark2">
+  <div class="section-tag">Gestão de Pessoas</div>
+  <div class="section-title white">People &amp; Culture:<br><span>do informal ao estruturado</span></div>
+  <div class="section-sub white">Implantação de um ciclo completo de gestão de pessoas — do recrutamento ao engajamento, com foco em performance e pertencimento.</div>
+
+  <!-- Ciclo RH visual -->
+  <div style="background:rgba(255,255,255,0.04);border-radius:14px;padding:20px;margin-top:8px;border:1px solid rgba(201,168,76,0.15);">
+    <div style="text-align:center;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:16px;">CICLO DE GESTÃO DE PESSOAS</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">🎯</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Contratar</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">Processo seletivo estruturado</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">🤝</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Integrar</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">Onboarding e cultura</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">🏆</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Recompensar</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">Comissão + premiações</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">📈</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Desenvolver</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">Trilhas e capacitação</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">💙</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Manter</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">Segurança psicológica</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:12px;border-left:3px solid var(--gold);">
+        <div style="font-size:16px;margin-bottom:4px;">📊</div>
+        <div style="font-size:12px;font-weight:700;color:var(--white);">Monitorar</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px;">KPIs e performance</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">Pilares da Cultura Implementada</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="pill">Segurança Psicológica</span>
+      <span class="pill">Engajamento</span>
+      <span class="pill">Encantamento</span>
+      <span class="pill">Performance</span>
+      <span class="pill">Comunicação ágil</span>
+      <span class="pill">POPs por função</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OPERAÇÕES ══════════════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">Operações &amp; Processos</div>
+  <div class="section-title white">Da operação<br>no <span>improviso</span> ao manual</div>
+  <div class="section-sub white">Aceleração de projetos, processos documentados e qualidade padronizada em todas as unidades.</div>
+
+  <div class="area-card" style="margin-top:8px;">
+    <div class="area-head">
+      <div class="area-icon">⚡</div>
+      <div>
+        <div class="area-title">Aceleração de Projetos</div>
+        <div class="area-period">Processos otimizados e comunicação facilitada</div>
+      </div>
+    </div>
+    <ul class="area-items">
+      <li>Mapeamento de todos os processos críticos da operação</li>
+      <li>Eliminação de gargalos e etapas redundantes</li>
+      <li>Definição de SLAs por tipo de demanda</li>
+      <li>Comunicação padronizada entre áreas</li>
+    </ul>
+  </div>
+
+  <div class="area-card amber-border" style="margin-top:0;">
+    <div class="area-head">
+      <div class="area-icon" style="border-color:rgba(230,126,34,0.3);">📋</div>
+      <div>
+        <div class="area-title">Manuais e POPs</div>
+        <div class="area-period">Qualidade garantida sem depender de quem faz</div>
+      </div>
+    </div>
+    <ul class="area-items">
+      <li>Elaboração de manuais operacionais por área</li>
+      <li>POPs (Procedimentos Operacionais Padrão) para cada função</li>
+      <li>Revisão e adequação de PPCs submetidos ao e-MEC e CRO/CFO</li>
+      <li>Elaboração de portaria regulatória</li>
+    </ul>
+    <div class="area-result" style="background:rgba(230,126,34,0.1);border-color:rgba(230,126,34,0.2);">
+      <div class="r-icon">✅</div>
+      <div class="r-text" style="color:#E67E22;">Qualidade replicável em 45 coordenadores do sistema</div>
+    </div>
+  </div>
+
+  <div class="area-card blue-border" style="margin-top:0;">
+    <div class="area-head">
+      <div class="area-icon" style="border-color:rgba(52,152,219,0.3);">🤖</div>
+      <div>
+        <div class="area-title">Automações Implementadas</div>
+        <div class="area-period">Velocidade, precisão e redução de custo</div>
+      </div>
+    </div>
+    <ul class="area-items">
+      <li>Contratos digitais — assinatura eletrônica em minutos</li>
+      <li>Cobrança automática — integração plataforma + CRM</li>
+    </ul>
+    <div class="area-result" style="background:rgba(52,152,219,0.1);border-color:rgba(52,152,219,0.2);">
+      <div class="r-icon">💰</div>
+      <div class="r-text" style="color:#3498DB;">R$48.000 economizados/ano em processos manuais</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONSOLIDADO ════════════════════════════════════════════════════════ -->
+<section class="section section-dark2">
+  <div class="section-tag">Resultados Consolidados</div>
+  <div class="section-title white">O que <span>3 anos</span> de gestão estruturada geraram diretamente</div>
+
+  <div class="kpi-grid" style="margin-top:20px;">
+    <div class="kpi-card">
+      <div class="kpi-val big green">+R$570k</div>
+      <div class="kpi-lbl">Reversão de caixa<br>em 12 meses</div>
+      <div class="kpi-sub">-R$200k → +R$370k</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">+49%</div>
+      <div class="kpi-lbl">Faturamento<br>anual 2024</div>
+      <div class="kpi-sub">R$6,9M → R$10,3M</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">+20 p.p.</div>
+      <div class="kpi-lbl">Margem bruta<br>30% → 50%</div>
+      <div class="kpi-sub">Renegociação de contratos</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">+70%</div>
+      <div class="kpi-lbl">Vendas à vista e<br>cartão (-13%→+70%)</div>
+      <div class="kpi-sub">Plano de cargos 2024</div>
+    </div>
+    <div class="kpi-card full" style="text-align:center;">
+      <div class="kpi-val">45</div>
+      <div class="kpi-lbl">Projetos vendidos<br>Escala nacional 2022–2026</div>
+    </div>
+    <div class="kpi-card full">
+      <div class="kpi-val">R$2,7M</div>
+      <div class="kpi-lbl">Royalties acumulados — Sistema de Ensino</div>
+      <div class="kpi-sub">45 projetos vendidos desde 2022</div>
+    </div>
+    <div class="kpi-card full" style="border-top-color:#2ECC71;">
+      <div class="kpi-val green" style="font-size:28px;">R$48k/ano</div>
+      <div class="kpi-lbl">Economia em automação de contratos e processos</div>
+    </div>
+    <div class="kpi-card full">
+      <div class="kpi-val" style="font-size:28px;">+R$2MM</div>
+      <div class="kpi-lbl">Economia na operação acadêmica em 24 meses</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROI ═════════════════════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="section-tag blue">Impacto Total</div>
+  <div class="section-title">O valor gerado<br>em 4 anos</div>
+
+  <div class="roi-wrap">
+    <div class="roi-label">Impacto financeiro direto estimado</div>
+    <div class="roi-val">R$5,4M+</div>
+    <div class="roi-sub">Caixa revertido · Royalties sistema de ensino · Economia operacional · Automação</div>
+  </div>
+  <div style="margin-top:16px;background:#fff;border-radius:12px;padding:16px 18px;">
+    <div style="font-size:10px;font-weight:700;color:var(--navy);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">Composição do impacto financeiro direto</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lgray);border-radius:8px;">
+        <span style="font-size:12px;color:var(--dgray);">Reversão de caixa (12 meses)</span>
+        <span style="font-size:13px;font-weight:800;color:var(--green);">+R$570k</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lgray);border-radius:8px;">
+        <span style="font-size:12px;color:var(--dgray);">Royalties — Sistema de Ensino</span>
+        <span style="font-size:13px;font-weight:800;color:var(--green);">+R$2,7M</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lgray);border-radius:8px;">
+        <span style="font-size:12px;color:var(--dgray);">Economia operação acadêmica (24m)</span>
+        <span style="font-size:13px;font-weight:800;color:var(--green);">+R$2,0M</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lgray);border-radius:8px;">
+        <span style="font-size:12px;color:var(--dgray);">Automação de contratos (acumulado)</span>
+        <span style="font-size:13px;font-weight:800;color:var(--green);">+R$96k</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--navy);border-radius:8px;margin-top:4px;">
+        <span style="font-size:12px;font-weight:700;color:var(--white);">Total impacto direto</span>
+        <span style="font-size:15px;font-weight:900;color:var(--gold);">≈ R$5,4M</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mini-bars" style="margin-top:24px;">
+    <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;">Impacto por dimensão</div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Financeiro</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:95%;background:linear-gradient(90deg,var(--navy),var(--gold));">
+          <span>+R$570k caixa</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Comercial</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:90%;background:linear-gradient(90deg,var(--navy2),var(--gold));">
+          <span>Estruturado</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Sistema de Ensino</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:100%;background:linear-gradient(90deg,var(--green),#27AE60);">
+          <span>R$2,7M royalties</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Operacional</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:85%;background:linear-gradient(90deg,#1a3a6b,#3498DB);">
+          <span>R$2M+ economia</span></div>
+      </div>
+    </div>
+    <div class="mini-bar-row">
+      <div class="mini-bar-lbl">Automação</div>
+      <div class="mini-bar-track">
+        <div class="mini-bar-fill" style="width:40%;background:linear-gradient(90deg,#7a5800,var(--gold));">
+          <span>R$48k/ano</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOBRE ═══════════════════════════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">O Consultor</div>
+  <div class="section-title white">Fernando<br><span>Giovanini Macedo</span></div>
+
+  <div style="margin-top:20px;background:rgba(255,255,255,0.04);border-radius:14px;padding:20px;border:1px solid rgba(201,168,76,0.15);">
+    <div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.7;">
+      Diretor de Operações do Grupo Inteegra e Consultor Empresarial especializado em reestruturação operacional, financeira e comercial de empresas em crescimento.
+    </div>
+    <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="pill">Reestruturação Financeira</span>
+      <span class="pill">Gestão de Operações</span>
+      <span class="pill">Estruturação Comercial</span>
+      <span class="pill">Gestão de Pessoas</span>
+      <span class="pill">Sistemas de Ensino</span>
+      <span class="pill">CRM &amp; Processos</span>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text" style="line-height:1.8;white-space:normal;">O básico bem feito, na ordem certa, executado com constância — é o que transforma empresas. Não é mágica. É método.</div>
+    <div class="quote-author">Fernando Giovanini Macedo</div>
+  </div>
+
+  <div class="quote-block" style="margin-top:16px;border-left-color:#3498DB;">
+    <div class="quote-text" style="font-size:13.5px;line-height:1.85;white-space:normal;">São diversas fragilidades que fomos diminuindo através da organização do Fernando. Uma cultura de escala, de padronização, de comunicação interna eficiente. Evoluímos em processos de vendas, faturamento, entrega do setor acadêmico e diminuímos nosso risco em relação a alunos e certificações. Muito disso eu devo ao Fernando. Hoje é uma relação de amizade e confiança. Eu tenho certeza que através da visão e ação dele, nós ainda temos muito a crescer.</div>
+    <div class="quote-author" style="color:#3498DB;">Roberto Vitale* — Fundador e CEO, Grupo Vitale Educação</div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
+<section class="ebook-footer">
+  <div class="footer-name">Fernando Giovanini Macedo</div>
+  <div class="footer-role">Diretor de Operações · Consultor Empresarial</div>
+  <div class="footer-divider"></div>
+  <div class="footer-contacts">
+    <div class="footer-contact"><strong>E-mail:</strong> giovanini.f@hotmail.com</div>
+    <div class="footer-contact"><strong>WhatsApp:</strong> (17) 99626-3826</div>
+    <div class="footer-contact"><strong>LinkedIn:</strong> linkedin.com/in/fernando-giovanini-macedo</div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-note">Especialista em transformar empresas com potencial travadas por falta de gestão em negócios com crescimento sustentável.</div>
+  <div class="disclaimer">
+    *O nome "Grupo Vitale Educação" é fictício e foi utilizado para preservar a confidencialidade do cliente. Os dados, resultados e métricas apresentados são reais e documentados. Este material é destinado exclusivamente à apresentação profissional do trabalho realizado.
+  </div>
+</section>
+
+</body>
+</html>

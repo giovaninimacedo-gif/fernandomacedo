@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Case de Sucesso — Grupo Vitale Educação</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
   :root {
     --navy: #0B2545;
     --navy2: #1B3A6B;
@@ -17,13 +19,33 @@
     --red: #C0392B;
     --dark: #0F1F3D;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-hyphens:none; hyphens:none; }
+  html { background: linear-gradient(160deg,#0a1730 0%,#050b18 100%); -webkit-overflow-scrolling:touch; }
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
     background: var(--lgray);
     color: #222;
-    max-width: 420px;
+    max-width: 960px;
     margin: 0 auto;
+    box-shadow: 0 0 80px rgba(0,0,0,0.5);
+  }
+  .cover-title, .section-title, .kpi-val, .rc-val, .roi-val, .nl-val {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── DESKTOP — expande respiro, tipografia e grids em telas largas, sem perder a identidade mobile ── */
+  @media (min-width:760px) {
+    html { padding:56px 0; min-height:100vh; }
+    .cover { min-height:auto; padding:64px 56px 56px; }
+    .cover-title { font-size:38px; }
+    .cover-subtitle { font-size:15px; max-width:640px; }
+    .cover-metrics { gap:14px; }
+    .section { padding:56px 64px; }
+    .section-title { font-size:28px; }
+    .section-sub { font-size:14.5px; max-width:760px; }
+    .compare-grid, .kpi-grid, .donut-wrap { gap:20px; }
+    .area-card { padding:24px 22px; }
+    .roi-wrap { padding:36px 32px; }
   }
 
   /* ── CAPA ── */

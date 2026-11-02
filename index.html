@@ -77,6 +77,8 @@
   }
 
   .nav-mentoria:hover { color: var(--gold); }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-diagnostico { color: var(--gold); }
 
   nav a.nav-cta {
     font-size: 13px;
@@ -166,6 +168,23 @@
   }
 
   a.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  a.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 13px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  a.btn-outline:hover { background: var(--gold); color: var(--black); }
 
   a.btn-secondary {
     font-size: 13px;
@@ -540,6 +559,8 @@
 
   .cta-final h2 { margin-bottom: 20px; }
   .cta-final .lead { margin: 0 auto 48px; }
+  .cta-final-group { justify-content: center; }
+  .cta-final-note { margin: 20px 0 0; font-size: 13px; color: var(--gray); }
 
   footer {
     background: var(--black);
@@ -582,6 +603,8 @@
     .etapas { grid-template-columns: 1fr; }
     .sobre-numeros { grid-template-columns: 1fr; }
     .cta-group { flex-direction: column; align-items: flex-start; }
+    .cta-final-group { align-items: center; }
+    .nav-diagnostico { display: none; }
     .resultado-numeros { grid-template-columns: 1fr 1fr; }
   }
 
@@ -596,7 +619,10 @@
 
 <nav>
   <a href="#" class="nav-logo"><span>FM</span> Consultoria</a>
-  <a href="https://fernandomacedoconsultoria.com.br/mentoria" class="nav-mentoria">Mentoria</a>
+  <div class="nav-links">
+    <a href="https://fernandomacedoconsultoria.com.br/diagnostico/?origem=site" class="nav-mentoria nav-diagnostico">Diagnóstico gratuito</a>
+    <a href="https://fernandomacedoconsultoria.com.br/mentoria" class="nav-mentoria">Mentoria</a>
+  </div>
   <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa." class="nav-cta" target="_blank" rel="noopener">Agendar conversa</a>
 </nav>
 
@@ -611,6 +637,7 @@
         Agendar conversa gratuita
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      <a href="https://fernandomacedoconsultoria.com.br/diagnostico/?origem=site" class="btn-outline">Fazer o diagnóstico gratuito</a>
       <a href="#servicos" class="btn-secondary">Ver os serviços</a>
     </div>
   </div>
@@ -844,10 +871,14 @@
     <p class="section-label">Próximo passo</p>
     <h2>Vamos conversar sobre<br><em>o seu negócio.</em></h2>
     <p class="lead">Trinta minutos de conversa já deixam claro se há oportunidade de trabalho conjunto. Sem compromisso, sem pitch de venda.</p>
-    <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20consultoria." class="btn-primary" target="_blank" rel="noopener">
-      Agendar pelo WhatsApp
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div class="cta-group cta-final-group">
+      <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20consultoria." class="btn-primary" target="_blank" rel="noopener">
+        Agendar pelo WhatsApp
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://fernandomacedoconsultoria.com.br/diagnostico/?origem=site" class="btn-outline">Fazer o diagnóstico gratuito</a>
+    </div>
+    <p class="cta-final-note">Prefere começar sozinho? O diagnóstico leva 4 minutos e mostra o resultado na hora.</p>
   </div>
 </section>
 

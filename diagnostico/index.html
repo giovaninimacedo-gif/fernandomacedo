@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Empresarial Gratuito | Fernando Macedo</title>
+<meta name="description" content="Descubra em 4 minutos onde sua empresa está perdendo dinheiro. Diagnóstico gratuito em 6 pilares de gestão, com resultado na hora.">
+<meta property="og:title" content="Diagnóstico Empresarial Gratuito | Fernando Macedo">
+<meta property="og:description" content="18 perguntas, 6 pilares de gestão, resultado na hora. Descubra onde sua empresa está perdendo dinheiro.">
+<meta property="og:url" content="https://fernandomacedoconsultoria.com.br/diagnostico/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0e0f11;
+    --bg-card: #17181b;
+    --bg-card-hover: #1e2023;
+    --border: #2a2c30;
+    --gold: #c9a463;
+    --gold-soft: #e4cf9c;
+    --text: #f2f0ec;
+    --text-muted: #9a9a9a;
+    --red: #d9776b;
+    --amber: #d8b25a;
+    --green: #7fb58a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 0%, #17181c 0%, #0e0f11 55%);
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 40px 20px 64px; }
+  .brand {
+    text-align: center; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  }
+  .brand a { color: inherit; text-decoration: none; }
+  h1, h2 { font-family: 'Playfair Display', serif; font-weight: 500; margin: 0; }
+  h1 { font-size: 32px; line-height: 1.2; text-align: center; }
+  h1 em, h2 em { color: var(--gold); }
+  h2 { font-size: 23px; line-height: 1.3; }
+  .lead { color: var(--text-muted); font-size: 15px; line-height: 1.7; text-align: center; margin: 16px 0 28px; }
+  .facts { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+  .fact {
+    font-size: 12.5px; color: var(--text); background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px;
+  }
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 32px; }
+  .pillar {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 13px 14px; font-size: 13.5px; line-height: 1.45;
+  }
+  .pillar b { display: block; font-weight: 600; margin-bottom: 2px; }
+  .pillar span { color: var(--text-muted); font-size: 12px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+    padding: 15px 20px; background: var(--gold); color: #0e0f11; font-weight: 600;
+    font-size: 15px; font-family: inherit; text-decoration: none; border: 0; border-radius: 12px;
+    cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, opacity .15s;
+    box-shadow: 0 8px 24px -8px rgba(201,164,99,.5);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(201,164,99,.65); }
+  .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn svg { width: 17px; height: 17px; }
+  .btn-ghost {
+    background: transparent; color: var(--text-muted); box-shadow: none;
+    border: 1px solid var(--border); font-weight: 500;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: #3a3d42; box-shadow: none; }
+  .note { color: var(--text-muted); font-size: 12px; text-align: center; margin-top: 14px; line-height: 1.6; }
+
+  /* Questionário */
+  .progress { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+  .progress > div { height: 100%; background: var(--gold); width: 0; transition: width .3s ease; }
+  .step-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 26px; }
+  .step-meta .tag { color: var(--gold); letter-spacing: .1em; text-transform: uppercase; font-size: 11.5px; }
+  .question { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.35; margin: 0 0 22px; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option {
+    display: block; width: 100%; text-align: left; padding: 15px 16px; font-family: inherit;
+    font-size: 14.5px; line-height: 1.45; color: var(--text); background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+    transition: background .15s, border-color .15s, transform .15s;
+  }
+  .option:hover { background: var(--bg-card-hover); border-color: #3a3d42; transform: translateY(-1px); }
+  .option.selected { border-color: var(--gold); background: #1f1c16; }
+  .nav { display: flex; justify-content: space-between; margin-top: 22px; }
+  .link-btn {
+    background: none; border: 0; color: var(--text-muted); font-family: inherit;
+    font-size: 13.5px; cursor: pointer; padding: 6px 0;
+  }
+  .link-btn:hover { color: var(--text); }
+
+  /* Formulário de contato */
+  .form { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; }
+  label { font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  input[type=text], input[type=email], input[type=tel] {
+    width: 100%; padding: 13px 14px; font-size: 15px; font-family: inherit; color: var(--text);
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; outline: none;
+  }
+  input:focus { border-color: var(--gold); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+  .consent input { margin-top: 3px; accent-color: var(--gold); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .error { color: var(--red); font-size: 13px; min-height: 18px; }
+
+  /* Resultado */
+  .score-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 26px 22px; text-align: center; margin: 22px 0 18px;
+  }
+  .score { font-family: 'Playfair Display', serif; font-size: 64px; line-height: 1; color: var(--gold); }
+  .score small { font-size: 22px; color: var(--text-muted); }
+  .level { display: inline-block; margin-top: 12px; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .level-text { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 14px 0 0; }
+  .section-label { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 30px 0 12px; }
+  .bar-row { margin-bottom: 14px; }
+  .bar-head { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+  .bar-head span:last-child { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .bar { height: 8px; background: var(--border); border-radius: 8px; overflow: hidden; }
+  .bar > div { height: 100%; border-radius: 8px; width: 0; transition: width .8s ease; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 18px; margin-bottom: 10px; font-size: 14px; line-height: 1.65;
+  }
+  .card b { display: block; margin-bottom: 4px; font-size: 14.5px; }
+  .card p { margin: 0; color: var(--text-muted); }
+  .card .action { color: var(--text); margin-top: 8px; }
+  .card.highlight { border-color: var(--gold); }
+  .cta-box {
+    margin-top: 30px; padding: 24px 20px; border-radius: 16px; text-align: center;
+    background: linear-gradient(160deg, #1f1c16, #17181b); border: 1px solid #3b3222;
+  }
+  .cta-box p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 10px 0 20px; }
+  .hidden { display: none !important; }
+  footer { text-align: center; margin-top: 44px; color: var(--text-muted); font-size: 12px; line-height: 1.7; }
+  footer a { color: var(--gold-soft); text-decoration: none; }
+
+  @media (max-width: 420px) {
+    h1 { font-size: 27px; }
+    .pillars, .row2 { grid-template-columns: 1fr; }
+    .question { font-size: 20px; }
+  }
+  @media print {
+    html, body { background: #fff; color: #111; }
+    .cta-box, .no-print, footer { display: none !important; }
+    .card, .score-card { background: #fff; border-color: #ccc; }
+    .card p, .level-text { color: #333; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><a href="https://fernandomacedoconsultoria.com.br/links/">Fernando Macedo · Consultoria Empresarial</a></div>
+
+  <!-- Abertura -->
+  <section id="intro">
+    <h1>Onde sua empresa está <em>perdendo dinheiro?</em></h1>
+    <p class="lead">Um diagnóstico gratuito em 6 pilares de gestão, com a mesma lógica que uso no Raio X Empresarial dos meus clientes. Você responde, e o resultado sai na hora, com as prioridades por onde começar.</p>
+    <div class="facts">
+      <span class="fact">⏱ 4 minutos</span>
+      <span class="fact">22 perguntas</span>
+      <span class="fact">Resultado na hora</span>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><b>Gestão e indicadores</b><span>Metas, números e rotina</span></div>
+      <div class="pillar"><b>Marketing</b><span>Geração de oportunidades</span></div>
+      <div class="pillar"><b>Vendas</b><span>Processo e conversão</span></div>
+      <div class="pillar"><b>Base de clientes</b><span>Recorrência e indicação</span></div>
+      <div class="pillar"><b>Financeiro</b><span>DRE, caixa e cobrança</span></div>
+      <div class="pillar"><b>Pessoas e processos</b><span>Dependência do dono</span></div>
+    </div>
+    <button class="btn" id="start">Começar o diagnóstico</button>
+    <p class="note">Responda pensando em como a empresa funciona hoje, não em como deveria funcionar.</p>
+  </section>
+
+  <!-- Perguntas -->
+  <section id="quiz" class="hidden">
+    <div class="progress"><div id="progress-bar"></div></div>
+    <div class="step-meta"><span class="tag" id="q-tag"></span><span id="q-count"></span></div>
+    <p class="question" id="q-text"></p>
+    <div class="options" id="q-options"></div>
+    <div class="nav"><button class="link-btn" id="back">← Voltar</button><span></span></div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="hidden">
+    <div class="progress"><div style="width:100%"></div></div>
+    <h2 style="margin-top:22px">Seu diagnóstico está <em>pronto.</em></h2>
+    <p class="lead" style="text-align:left;margin-bottom:0">Informe para quem é o resultado. Ele aparece na próxima tela, e eu recebo uma cópia para, se você quiser, conversarmos sobre os pontos críticos.</p>
+    <form class="form" id="lead-form" novalidate>
+      <div><label for="f-nome">Nome</label><input type="text" id="f-nome" autocomplete="name" required></div>
+      <div class="row2">
+        <div><label for="f-empresa">Empresa</label><input type="text" id="f-empresa" autocomplete="organization"></div>
+        <div><label for="f-cargo">Cargo</label><input type="text" id="f-cargo" autocomplete="organization-title" placeholder="Ex.: sócio, diretor"></div>
+      </div>
+      <div><label for="f-tel">WhatsApp com DDD</label><input type="tel" id="f-tel" autocomplete="tel" inputmode="tel" placeholder="(17) 99999-9999" required></div>
+      <div><label for="f-email">E-mail</label><input type="email" id="f-email" autocomplete="email" required></div>
+      <div class="hp" aria-hidden="true"><label for="f-website">Site</label><input type="text" id="f-website" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input type="checkbox" id="f-consent" required> <span>Autorizo o contato da FM Consultoria pelo WhatsApp e e-mail sobre este diagnóstico. Meus dados não serão compartilhados com terceiros.</span></label>
+      <div class="error" id="form-error"></div>
+      <button class="btn" type="submit" id="submit">Ver meu resultado</button>
+    </form>
+    <div class="nav"><button class="link-btn" id="back-contact">← Voltar às perguntas</button><span></span></div>
+  </section>
+
+  <!-- Resultado -->
+  <section id="result" class="hidden">
+    <h2 id="r-title"></h2>
+    <div class="score-card">
+      <div class="score"><span id="r-score">0</span><small>/100</small></div>
+      <span class="level" id="r-level"></span>
+      <p class="level-text" id="r-level-text"></p>
+    </div>
+
+    <div class="section-label">Seus 6 pilares</div>
+    <div id="r-bars"></div>
+
+    <div class="section-label">Por onde começar</div>
+    <div id="r-priorities"></div>
+
+    <div class="section-label">O seu maior desafio, na leitura do método</div>
+    <div id="r-challenge"></div>
+
+    <div class="section-label">Onde costuma haver dinheiro parado</div>
+    <div class="card" id="r-money"></div>
+
+    <div class="cta-box">
+      <h2>Quer transformar isso em um <em>plano de ação?</em></h2>
+      <p>Em uma conversa de 30 minutos, sem custo, olhamos juntos os seus pilares mais críticos e o que daria para resolver primeiro.</p>
+      <a class="btn" id="r-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.1-.4 0-.5-.1-.2-.7-1.6-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.1 2.7 1.1 2.7.7 3.2.7.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.5c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.1.9.9-3-.2-.3C3.7 14.7 3.2 13.4 3.2 12c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.8 8.2-8.6 8.2z"/></svg>
+        <span>Agendar conversa com Fernando</span>
+      </a>
+      <p class="note" style="margin:14px 0 0">Também pode salvar este resultado: <button class="link-btn" id="print" style="color:var(--gold-soft);padding:0">baixar em PDF</button></p>
+    </div>
+  </section>
+
+  <footer class="no-print">
+    FM Consultoria Empresarial<br>
+    <a href="https://fernandomacedoconsultoria.com.br">fernandomacedoconsultoria.com.br</a> · São José do Rio Preto, SP
+  </footer>
+</div>
+
+<script>
+(function () {
+  var API = "https://crm-consultoria-plum.vercel.app/api/publico/diagnostico";
+  var WHATSAPP = "5517996263826";
+
+  // Origem do lead pelo parâmetro ?origem= do link (o ManyChat do Instagram
+  // manda ?origem=instagram). Sem parâmetro, conta como Site.
+  var ORIGENS = {
+    instagram: "Instagram",
+    links: "Página de links",
+    linkedin: "LinkedIn",
+    whatsapp: "WhatsApp",
+    site: "Site",
+    indicacao: "Indicação",
+    email: "E-mail"
+  };
+  var params = new URLSearchParams(location.search);
+  var origemParam = (params.get("origem") || "").toLowerCase();
+  var ORIGEM = ORIGENS[origemParam] || "Site";
+
+  var PILARES = {
+    gestao: "Gestão e indicadores",
+    marketing: "Marketing",
+    vendas: "Vendas",
+    base: "Base de clientes",
+    financeiro: "Financeiro",
+    pessoas: "Pessoas e processos"
+  };
+
+  // Perguntas de perfil (não pontuam) e de pilar (3 a 0 pontos, da melhor
+  // para a pior alternativa).
+  var PERGUNTAS = [
+    { id: "segmento", perfil: true, tag: "Seu negócio", q: "Qual é o segmento da sua empresa?",
+      o: ["Clínica odontológica", "Outra clínica ou consultório de saúde", "Instituto ou escola de ensino em saúde", "Outro segmento"] },
+    { id: "faturamento", perfil: true, tag: "Seu negócio", q: "Qual é o faturamento médio mensal?",
+      o: ["Até R$ 30 mil", "De R$ 30 mil a R$ 100 mil", "De R$ 100 mil a R$ 300 mil", "Acima de R$ 300 mil"] },
+    { id: "equipe", perfil: true, tag: "Seu negócio", q: "Quantas pessoas trabalham na empresa, contando sócios?",
+      o: ["1 a 3", "4 a 10", "11 a 30", "Mais de 30"] },
+
+    { id: "metas", p: "gestao", q: "A empresa tem metas mensais de faturamento, vendas e marketing?",
+      o: ["Sim, por área, e acompanho toda semana", "Sim, mas só olho no fim do mês", "Existe uma meta geral de faturamento, sem desdobrar", "Não temos metas definidas"] },
+    { id: "numeros", p: "gestao", q: "Onde ficam os números da empresa?",
+      o: ["Num painel atualizado, que consulto quando quero", "Em planilhas que alguém atualiza", "Espalhados em sistemas, ninguém junta", "Basicamente na minha cabeça"] },
+    { id: "reuniao", p: "gestao", q: "Com que frequência financeiro, marketing e vendas olham os mesmos números juntos?",
+      o: ["Toda semana", "Uma vez por mês", "Só quando aparece um problema", "Nunca"] },
+
+    { id: "oportunidades", p: "marketing", q: "Você sabe quantas oportunidades novas (pessoas interessadas) a empresa gera por mês?",
+      o: ["Sei o número exato, e ele é constante", "Sei mais ou menos", "Varia muito de um mês para o outro", "Não sei"] },
+    { id: "registro", p: "marketing", q: "Quem demonstra interesse e não compra fica registrado, com nome e contato?",
+      o: ["Sim, todos, num CRM", "A maioria, em planilha ou no WhatsApp", "Só registramos quem compra", "Não registramos"] },
+    { id: "cac", p: "marketing", q: "Você sabe quanto custa conquistar um cliente novo?",
+      o: ["Sei, e acompanho por canal", "Sei quanto gasto em marketing, mas não por cliente", "Tenho uma ideia", "Não sei"] },
+
+    { id: "processo", p: "vendas", q: "Como funciona o processo de venda?",
+      o: ["Roteiro definido, etapas no CRM e acompanhamento programado", "Existe roteiro, mas cada um faz do seu jeito", "Depende de quem atende", "Não existe processo"] },
+    { id: "followup", p: "vendas", q: "O que acontece com quem pede orçamento e não fecha?",
+      o: ["Recebe acompanhamento programado por semanas", "Recebe um ou dois contatos", "Só volta a falar se a pessoa procurar", "Ninguém volta a falar"] },
+    { id: "desconto", p: "vendas", q: "Com que frequência vocês fecham vendas com desconto?",
+      o: ["Raramente, e o desconto tem regra", "Às vezes", "Na maioria das vendas", "Quase sempre, é assim que fechamos"] },
+
+    { id: "lista", p: "base", q: "Existe uma lista de clientes com contato atualizado e histórico de compra?",
+      o: ["Sim, no sistema, separada por perfil", "Sim, mas desorganizada", "Só de parte dos clientes", "Não"] },
+    { id: "ativacao", p: "base", q: "Com que frequência a base de clientes recebe uma nova oferta ou campanha?",
+      o: ["Todo mês, com calendário", "Algumas vezes por ano", "Só em datas especiais", "Nunca"] },
+    { id: "indicacao", p: "base", q: "Como funcionam as indicações?",
+      o: ["Programa com regra, incentivo e acompanhamento", "Pedimos indicação de vez em quando", "Chegam sozinhas", "Nunca pensamos nisso"] },
+
+    { id: "dre", p: "financeiro", q: "A empresa tem um DRE (resultado mensal) que você usa para decidir?",
+      o: ["Sim, fechado até o dia 10 do mês seguinte", "Sim, mas sai com atraso", "Só o contador faz, eu não uso", "Não temos"] },
+    { id: "caixa", p: "financeiro", q: "Existe fluxo de caixa projetado?",
+      o: ["Sim, para os próximos 90 dias ou mais", "Só para o mês corrente", "Só acompanho o saldo do banco", "Não"] },
+    { id: "cobranca", p: "financeiro", q: "Como são feitas a conferência dos recebimentos e a cobrança de inadimplentes?",
+      o: ["Conferência diária e cobrança com régua definida", "Toda semana", "Quando sobra tempo", "Não fazemos"] },
+
+    { id: "ausencia", p: "pessoas", q: "Se você se afastar por 30 dias, o que acontece com a empresa?",
+      o: ["Funciona normalmente", "Funciona, mas o resultado cai", "Muita coisa trava", "Praticamente para"] },
+    { id: "cargos", p: "pessoas", q: "Cada pessoa da equipe sabe exatamente o que se espera dela?",
+      o: ["Sim, com função descrita e meta individual", "A função é descrita, mas sem meta", "É combinado de forma informal", "Não"] },
+    { id: "processos", p: "pessoas", q: "Os processos principais (atendimento, venda, financeiro) estão documentados?",
+      o: ["Sim, e a equipe segue", "Estão documentados, mas ninguém segue", "Só alguns", "Não"] },
+
+    { id: "desafio", perfil: true, tag: "Para fechar", q: "Qual frase descreve melhor o momento da empresa?",
+      o: ["Não gero oportunidades suficientes", "Tenho oportunidades, mas não converto em venda", "Só consigo vender com desconto", "Vendo, mas não sobra dinheiro", "O cliente compra uma vez e não volta", "As vendas sobem e descem sem explicação"] }
+  ];
+
+  // Leitura de cada pilar por faixa de nota, na lógica do Raio X.
+  var LEITURA = {
+    gestao: {
+      baixo: "A empresa é gerida pela sensação, não pelos números. Sem meta desdobrada e sem rotina de acompanhamento, os problemas só aparecem quando já viraram falta de caixa.",
+      medio: "Os números existem, mas chegam tarde ou separados. Quem decide olha o resultado do mês, não as etapas que produziram esse resultado.",
+      alto: "Há metas e rotina de acompanhamento. O próximo passo é ligar cada meta a um indicador de processo com dono.",
+      acao: "Defina 5 indicadores da semana (oportunidades, conversão, ticket, recebido e caixa) e uma reunião fixa de 30 minutos para olhá-los."
+    },
+    marketing: {
+      baixo: "A empresa vende em uma etapa: quem não compra na hora some, e o anúncio paga de novo pela mesma pessoa. É o jeito mais caro de crescer.",
+      medio: "Há geração de oportunidades, mas sem registro completo nem custo por cliente. Sem saber o custo de cada venda, crescer pode acelerar o prejuízo.",
+      alto: "As oportunidades são registradas e medidas. Vale comparar o custo por cliente com o ticket médio: o alvo é ficar abaixo de 20%.",
+      acao: "Registre toda pessoa que demonstrar interesse, mesmo quem não comprou, e calcule quanto custa cada cliente novo."
+    },
+    vendas: {
+      baixo: "A venda depende de quem atende. Sem processo e sem acompanhamento, a maior parte dos orçamentos é perdida por esquecimento, não por preço.",
+      medio: "Existe um jeito de vender, mas não é seguido por todos, e o acompanhamento para cedo. O desconto vira a ferramenta de fechamento.",
+      alto: "O processo comercial está de pé. O ganho agora está em achar a etapa com a maior perda e trabalhar só nela.",
+      acao: "Escreva o roteiro de atendimento e crie uma sequência de acompanhamento para quem recebeu orçamento e não fechou."
+    },
+    base: {
+      baixo: "Os clientes atuais, a fonte de receita mais barata que existe, estão parados. Cada venda nova custa como se fosse a primeira.",
+      medio: "A base existe, mas é pouco trabalhada. Campanhas esporádicas deixam recompra e indicação ao acaso.",
+      alto: "A base é ativada com frequência. Dá para avançar em ticket médio e em um programa de indicação com regra.",
+      acao: "Organize a lista de clientes e de quem já recebeu proposta, e monte um calendário mensal de ativação."
+    },
+    financeiro: {
+      baixo: "Não dá para saber se a empresa dá lucro nem quanto caixa haverá no mês que vem. Vender mais nesse cenário pode piorar o caixa.",
+      medio: "O financeiro registra, mas não orienta decisão. O DRE atrasado e a falta de projeção fazem o aperto de caixa chegar de surpresa.",
+      alto: "O financeiro está estruturado. O próximo nível é ler margem por produto e lucro no caixa, não só no DRE.",
+      acao: "Feche o DRE até o dia 10 de cada mês e projete o caixa dos próximos 90 dias."
+    },
+    pessoas: {
+      baixo: "A empresa depende de você para quase tudo. Isso trava o crescimento e transforma qualquer ausência em queda de resultado.",
+      medio: "A equipe sabe o que fazer no dia a dia, mas sem meta individual e processo escrito o padrão varia de pessoa para pessoa.",
+      alto: "Há clareza de papéis e processo. Agora é medir desempenho individual e formar lideranças.",
+      acao: "Documente os 3 processos que mais dependem de você e dê a cada pessoa uma meta mensurável."
+    }
+  };
+
+  var DESAFIOS = [
+    { area: "Marketing", texto: "A causa mais comum é público mal definido ou atração falhando. Antes de investir mais em anúncio, vale olhar quem já passou pela empresa e não comprou: costuma ser a oportunidade mais barata." },
+    { area: "Marketing ou Vendas", texto: "Ou o público que chega não é o certo, ou o atendimento não está preparado para conduzir a venda. A resposta está em medir onde, no funil, as pessoas desistem." },
+    { area: "Marketing ou Vendas", texto: "Vender só com desconto é sinal de valor percebido baixo, não de preço alto. Oferta fraca ou equipe sem argumento. Todo desconto precisa ser recalculado contra o custo de conquistar o cliente." },
+    { area: "Financeiro e Vendas", texto: "Normalmente o custo de conquistar cada cliente está alto em relação ao ticket, ou o recebimento é parcelado enquanto o custo é à vista. Haver lucro na venda não significa haver lucro no caixa." },
+    { area: "Pós-venda", texto: "Falta um processo de relacionamento com quem já comprou. É o público de menor custo: cada recompra tem custo de aquisição praticamente zero." },
+    { area: "Marketing", texto: "Vendas inconsistentes vêm da falta de um processo constante de geração de oportunidades. Faturamento é consequência das etapas do funil: é nelas que se age." }
+  ];
+
+  var respostas = {};
+  var idx = 0;
+
+  function $(id) { return document.getElementById(id); }
+  function mostrar(id) {
+    ["intro", "quiz", "contact", "result"].forEach(function (s) { $(s).classList.toggle("hidden", s !== id); });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderPergunta() {
+    var p = PERGUNTAS[idx];
+    $("progress-bar").style.width = (idx / PERGUNTAS.length * 100) + "%";
+    $("q-tag").textContent = p.perfil ? p.tag : PILARES[p.p];
+    $("q-count").textContent = (idx + 1) + " de " + PERGUNTAS.length;
+    $("q-text").textContent = p.q;
+    $("back").style.visibility = idx === 0 ? "hidden" : "visible";
+    var box = $("q-options");
+    box.innerHTML = "";
+    p.o.forEach(function (texto, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "option" + (respostas[p.id] === i ? " selected" : "");
+      b.textContent = texto;
+      b.onclick = function () {
+        respostas[p.id] = i;
+        b.classList.add("selected");
+        setTimeout(function () {
+          if (idx < PERGUNTAS.length - 1) { idx++; renderPergunta(); }
+          else { mostrar("contact"); $("f-nome").focus(); }
+        }, 180);
+      };
+      box.appendChild(b);
+    });
+  }
+
+  function calcular() {
+    var notas = {};
+    Object.keys(PILARES).forEach(function (k) {
+      var qs = PERGUNTAS.filter(function (p) { return p.p === k; });
+      var soma = qs.reduce(function (s, p) { return s + (3 - respostas[p.id]); }, 0);
+      notas[k] = Math.round(soma / (qs.length * 3) * 100);
+    });
+    var vals = Object.keys(notas).map(function (k) { return notas[k]; });
+    var geral = Math.round(vals.reduce(function (a, b) { return a + b; }, 0) / vals.length);
+    return { notas: notas, geral: geral };
+  }
+
+  function nivel(n) {
+    if (n < 40) return { nome: "Crítico", cor: "var(--red)", texto: "A empresa funciona no improviso e depende de você para quase tudo. A boa notícia: nesse estágio, poucas mudanças de base já mostram resultado rápido." };
+    if (n < 60) return { nome: "Em estruturação", cor: "var(--amber)", texto: "Há boas práticas, mas elas não formam um sistema. O resultado oscila porque depende de esforço, não de processo." };
+    if (n < 80) return { nome: "Estruturado", cor: "var(--gold)", texto: "A empresa já tem base de gestão. O crescimento agora vem de atacar os pilares mais fracos e de trabalhar melhor quem já é cliente." };
+    return { nome: "Avançado", cor: "var(--green)", texto: "Gestão madura. O ganho está em ajuste fino: margem por produto, recorrência e formação de lideranças." };
+  }
+  function faixa(n) { return n < 40 ? "baixo" : n < 70 ? "medio" : "alto"; }
+  function corBarra(n) { return n < 40 ? "var(--red)" : n < 70 ? "var(--amber)" : "var(--green)"; }
+
+  function resumoTexto(r, dados) {
+    var nv = nivel(r.geral);
+    var ordem = Object.keys(r.notas).sort(function (a, b) { return r.notas[a] - r.notas[b]; });
+    var linhas = [
+      "Resultado: " + r.geral + "/100 (" + nv.nome + ")",
+      "Segmento: " + PERGUNTAS[0].o[respostas.segmento],
+      "Faturamento mensal: " + PERGUNTAS[1].o[respostas.faturamento],
+      "Equipe: " + PERGUNTAS[2].o[respostas.equipe] + " pessoas",
+      "Maior desafio: " + PERGUNTAS[PERGUNTAS.length - 1].o[respostas.desafio],
+      "Pilares: " + Object.keys(PILARES).map(function (k) { return PILARES[k] + " " + r.notas[k]; }).join(" · "),
+      "Mais críticos: " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]],
+      "Respostas:"
+    ];
+    PERGUNTAS.forEach(function (p) {
+      if (p.perfil) return;
+      linhas.push("- " + p.q + " → " + p.o[respostas[p.id]]);
+    });
+    return linhas.join("\n");
+  }
+
+  function renderResultado(r, nome) {
+    var primeiro = nome.split(" ")[0];
+    var nv = nivel(r.geral);
+    $("r-title").innerHTML = "";
+    $("r-title").appendChild(document.createTextNode(primeiro + ", este é o diagnóstico da sua empresa"));
+    $("r-level").textContent = "Nível: " + nv.nome;
+    $("r-level").style.background = "color-mix(in srgb, " + nv.cor + " 18%, transparent)";
+    $("r-level").style.color = nv.cor;
+    $("r-level-text").textContent = nv.texto;
+
+    var alvo = r.geral, atual = 0;
+    var t = setInterval(function () {
+      atual += Math.max(1, Math.round((alvo - atual) / 8));
+      if (atual >= alvo) { atual = alvo; clearInterval(t); }
+      $("r-score").textContent = atual;
+    }, 30);
+
+    var bars = $("r-bars");
+    bars.innerHTML = "";
+    Object.keys(PILARES).forEach(function (k) {
+      var row = document.createElement("div");
+      row.className = "bar-row";
+      row.innerHTML = '<div class="bar-head"><span></span><span>' + r.notas[k] + '</span></div><div class="bar"><div></div></div>';
+      row.querySelector(".bar-head span").textContent = PILARES[k];
+      var fill = row.querySelector(".bar > div");
+      fill.style.background = corBarra(r.notas[k]);
+      bars.appendChild(row);
+      setTimeout(function () { fill.style.width = Math.max(r.notas[k], 3) + "%"; }, 60);
+    });
+
+    var ordem = Object.keys(r.notas).sort(function (a, b) { return r.notas[a] - r.notas[b]; });
+    var pri = $("r-priorities");
+    pri.innerHTML = "";
+    ordem.slice(0, 3).forEach(function (k, i) {
+      var c = document.createElement("div");
+      c.className = "card" + (i === 0 ? " highlight" : "");
+      c.innerHTML = "<b></b><p></p><p class='action'></p>";
+      c.querySelector("b").textContent = (i + 1) + ". " + PILARES[k] + " · " + r.notas[k] + "/100";
+      c.querySelectorAll("p")[0].textContent = LEITURA[k][faixa(r.notas[k])];
+      c.querySelectorAll("p")[1].textContent = "Primeiro passo: " + LEITURA[k].acao;
+      pri.appendChild(c);
+    });
+
+    var d = DESAFIOS[respostas.desafio];
+    var ch = $("r-challenge");
+    ch.innerHTML = "<div class='card'><b></b><p></p></div>";
+    ch.querySelector("b").textContent = "“" + PERGUNTAS[PERGUNTAS.length - 1].o[respostas.desafio] + "” · área provável: " + d.area;
+    ch.querySelector("p").textContent = d.texto;
+
+    var base = r.notas.base, mk = r.notas.marketing;
+    var money;
+    if (base < 70) {
+      money = "Na sua base de clientes. Quem já comprou e quem já recebeu proposta e não fechou custam quase nada para serem trabalhados de novo, e hoje recebem pouca atenção. Antes de aumentar o investimento em anúncio, é ali que costuma estar a receita mais rápida.";
+    } else if (mk < 70) {
+      money = "No registro das oportunidades. Sua base é bem trabalhada, mas quem demonstra interesse e não compra se perde. Guardar esse contato e ativá-lo de novo dilui o custo de cada cliente novo.";
+    } else {
+      money = "No ticket médio e na indicação. Com base e captação organizadas, o próximo ganho vem de vender mais para quem já compra e de transformar clientes satisfeitos em fonte de clientes novos.";
+    }
+    $("r-money").innerHTML = "<p></p>";
+    $("r-money").querySelector("p").textContent = money;
+
+    var msg = "Olá, Fernando! Fiz o diagnóstico gratuito pelo seu site. Tirei " + r.geral + "/100 (" + nv.nome +
+      ") e meus pilares mais críticos foram " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]] + ". Quero agendar a conversa.";
+    $("r-whatsapp").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    mostrar("result");
+  }
+
+  $("start").onclick = function () { idx = 0; mostrar("quiz"); renderPergunta(); };
+  $("back").onclick = function () { if (idx > 0) { idx--; renderPergunta(); } };
+  $("back-contact").onclick = function () { idx = PERGUNTAS.length - 1; mostrar("quiz"); renderPergunta(); };
+  $("print").onclick = function () { window.print(); };
+
+  $("lead-form").onsubmit = function (e) {
+    e.preventDefault();
+    var nome = $("f-nome").value.trim();
+    var tel = $("f-tel").value.replace(/\D/g, "");
+    var email = $("f-email").value.trim();
+    var err = $("form-error");
+    if (nome.length < 2) { err.textContent = "Informe seu nome."; return; }
+    if (tel.length < 10 || tel.length > 13) { err.textContent = "Informe o WhatsApp com DDD."; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent = "Informe um e-mail válido."; return; }
+    if (!$("f-consent").checked) { err.textContent = "Marque a autorização de contato para continuar."; return; }
+    err.textContent = "";
+
+    var r = calcular();
+    var payload = {
+      nome: nome,
+      telefone: tel,
+      email: email,
+      empresa: $("f-empresa").value.trim(),
+      cargo: $("f-cargo").value.trim(),
+      origem: ORIGEM,
+      website: $("f-website").value,
+      resultado: resumoTexto(r)
+    };
+    var btn = $("submit");
+    btn.disabled = true;
+    btn.textContent = "Calculando…";
+
+    // O resultado aparece mesmo se o envio ao CRM falhar: o visitante não
+    // pode ficar sem resposta. Uma nova tentativa sai em segundo plano.
+    function enviar(tentativa) {
+      return fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+        .then(function (res) { if (!res.ok && res.status >= 500 && tentativa < 2) return enviar(tentativa + 1); })
+        .catch(function () { if (tentativa < 2) return enviar(tentativa + 1); });
+    }
+    var pronto = false;
+    function seguir() { if (pronto) return; pronto = true; renderResultado(r, nome); }
+    enviar(1).then(seguir);
+    setTimeout(seguir, 6000);
+  };
+})();
+</script>
+</body>
+</html>

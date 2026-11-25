@@ -235,6 +235,12 @@
     <div class="section-label">Onde costuma haver dinheiro parado</div>
     <div class="card" id="r-money"></div>
 
+    <div class="section-label no-print">Veja o sistema funcionando</div>
+    <div class="card no-print" id="r-video">
+      <p style="margin:0 0 14px">O sistema que vem junto com a consultoria acompanha o paciente desde a primeira mensagem até o dinheiro entrar no caixa. Em 8 minutos, você vê todas as telas, com nomes e números fictícios.</p>
+      <video src="../videos/sistema-fm.mp4" poster="../videos/sistema-fm.jpg" controls playsinline preload="none" style="display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px"></video>
+    </div>
+
     <div class="cta-box">
       <h2>Quer transformar isso em um <em>plano de ação?</em></h2>
       <p>Em uma conversa de 30 minutos, sem custo, olhamos juntos os seus pilares mais críticos e o que daria para resolver primeiro.</p>
@@ -415,6 +421,11 @@
 
   var respostas = {};
   var idx = 0;
+  var avancando = false;
+  function primeiraSemResposta() {
+    for (var i = 0; i < PERGUNTAS.length; i++) if (typeof respostas[PERGUNTAS[i].id] !== "number") return i;
+    return -1;
+  }
 
   function $(id) { return document.getElementById(id); }
   function mostrar(id) {
@@ -437,10 +448,17 @@
       b.className = "option" + (respostas[p.id] === i ? " selected" : "");
       b.textContent = texto;
       b.onclick = function () {
+        // Um clique duplo (ou dois cliques rápidos) avançava duas perguntas
+        // e deixava a seguinte sem resposta, o que dava nota NaN.
+        if (avancando || PERGUNTAS[idx] !== p) return;
+        avancando = true;
         respostas[p.id] = i;
         b.classList.add("selected");
         setTimeout(function () {
+          avancando = false;
+          var falta = primeiraSemResposta();
           if (idx < PERGUNTAS.length - 1) { idx++; renderPergunta(); }
+          else if (falta >= 0) { idx = falta; renderPergunta(); }
           else { mostrar("contact"); $("f-nome").focus(); }
         }, 180);
       };
@@ -593,6 +611,8 @@
     if (!$("f-consent").checked) { err.textContent = "Marque a autorização de contato para continuar."; return; }
     err.textContent = "";
 
+    var falta = primeiraSemResposta();
+    if (falta >= 0) { idx = falta; mostrar("quiz"); renderPergunta(); return; }
     var r = calcular();
     var payload = {
       nome: nome,

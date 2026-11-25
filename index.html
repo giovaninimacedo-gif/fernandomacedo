@@ -535,9 +535,12 @@
 
   .depoimento {
     background: var(--surface);
-    padding: 48px 40px;
+    padding: 72px 40px 48px;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
+  .depoimento .depoimento-texto { flex: 1; }
 
   .depoimento::before {
     content: '"';

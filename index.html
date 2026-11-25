@@ -282,6 +282,10 @@
   .servicos { background: var(--black); }
   .servicos-inner { max-width: 1100px; margin: 0 auto; }
   .servicos-header { margin-bottom: 64px; }
+  .servicos-grid .servico-tag { min-height: 3.6em; }
+  .servicos-grid .servico-card:not(.featured) { border-top: 3px solid transparent; }
+  .servicos-grid .servico-card > p:not(.servico-tag) { min-height: 6.6em; }
+  @media (max-width: 900px) { .servicos-grid .servico-tag, .servicos-grid .servico-card > p:not(.servico-tag) { min-height: 0; } }
   .frentes { margin-top: 72px; }
   .frentes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
   .frente { background: var(--surface); padding: 28px 24px; }
@@ -760,7 +764,7 @@
         <div class="frente"><h4>Processos e equipe</h4><p>POPs, roteiros de atendimento, funções e metas por pessoa, para a empresa não depender da memória de ninguém.</p></div>
       </div>
       <div class="sistema-video">
-        <video src="videos/sistema-fm.mp4" poster="videos/sistema-fm.jpg" controls playsinline preload="none"></video>
+        <video src="videos/sistema-fm-daniel.mp4" poster="videos/sistema-fm-daniel.jpg" controls playsinline preload="none"></video>
         <p>Veja o sistema funcionando: todas as telas em 8 minutos, com nomes e números fictícios.</p>
       </div>
     </div>
@@ -851,6 +855,7 @@
           </div>
         </div>
         <p class="resultado-detalhe">Implementação de DRE, CRM, planejamento comercial, rotinas de gestão e estrutura de pessoas em 6 meses. Meta atingida no dia 22 do primeiro mês de operação estruturada.</p>
+        <a class="resultado-link" href="cases/case-clinica-odontologica-2.html">Ver o case completo →</a>
       </div>
       <div class="resultado-card">
         <p class="resultado-segmento">Odontologia · Clínica de implantes + Sistema de Ensino · SP · 6 meses</p>

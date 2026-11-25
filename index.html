@@ -282,6 +282,16 @@
   .servicos { background: var(--black); }
   .servicos-inner { max-width: 1100px; margin: 0 auto; }
   .servicos-header { margin-bottom: 64px; }
+  .frentes { margin-top: 72px; }
+  .frentes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .frente { background: var(--surface); padding: 28px 24px; }
+  .frente h4 { font-size: 15px; font-weight: 600; color: var(--white); margin: 0 0 10px; }
+  .frente h4::before { content: ''; display: block; width: 24px; height: 2px; background: var(--gold); margin-bottom: 14px; }
+  .frente p { font-size: 13.5px; line-height: 1.7; color: var(--gray); margin: 0; }
+  .sistema-video { margin: 48px auto 0; max-width: 860px; }
+  .sistema-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border: 0.5px solid rgba(201,168,76,0.25); }
+  .sistema-video p { font-size: 13px; color: var(--gray); text-align: center; margin: 14px 0 0; }
+  .resultado-link { display: inline-block; margin-top: 18px; font-size: 13px; color: var(--gold); text-decoration: none; letter-spacing: .04em; }
 
   .servicos-grid {
     display: grid;
@@ -612,6 +622,7 @@
     section { padding: 72px 24px; }
     .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
     .servicos-grid { grid-template-columns: 1fr; }
+    .frentes-grid { grid-template-columns: 1fr 1fr; }
     .segmentos-grid { grid-template-columns: 1fr; }
     .etapas { grid-template-columns: 1fr 1fr; }
     .resultados-grid { grid-template-columns: 1fr; }
@@ -629,6 +640,7 @@
     .cta-final-group { align-items: center; }
     .nav-diagnostico { display: none; }
     .resultado-numeros { grid-template-columns: 1fr 1fr; }
+    .frentes-grid { grid-template-columns: 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -654,7 +666,7 @@
   <div class="hero-inner">
     <p class="eyebrow">Consultoria Empresarial · São José do Rio Preto</p>
     <h1>Gestão que gera<br><em>resultado real.</em></h1>
-    <p class="hero-sub">Diagnóstico preciso, estrutura operacional e acompanhamento próximo para clínicas odontológicas e empresas de educação que querem crescer com consistência.</p>
+    <p class="hero-sub">Mais pacientes fechando, nenhum lead sem resposta e você sabendo quanto vai faturar antes de o mês acabar. Gestão, tráfego, atendimento automático, BI e financeiro com sistema próprio, para clínicas odontológicas e empresas de educação em saúde.</p>
     <div class="cta-group">
       <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa." class="btn-primary" target="_blank" rel="noopener">
         Agendar conversa gratuita
@@ -705,33 +717,51 @@
   <div class="servicos-inner">
     <div class="servicos-header">
       <p class="section-label">O que ofereço</p>
-      <h2>Dois formatos,<br><em>um objetivo.</em></h2>
-      <p class="lead">Cada engajamento começa pelo diagnóstico. A profundidade do acompanhamento depende do que seu negócio precisa.</p>
+      <h2>Não só aponto o caminho.<br><em>Coloco para rodar.</em></h2>
+      <p class="lead">O consultor tradicional entrega um plano. A agência cuida só do anúncio. Aqui, quem olha o negócio como diretor de operações também põe a captação, o atendimento e o financeiro para funcionar, com sistema próprio. Tudo começa pelo diagnóstico gratuito.</p>
     </div>
     <div class="servicos-grid">
-      <div class="servico-card featured">
-        <p class="servico-tag">Ponto de entrada</p>
-        <h3>Raio X Empresarial + Plano de Ação</h3>
-        <p>Um diagnóstico em 30 dias que expõe o que está travando o seu negócio: financeiro, comercial, operacional e gestão de pessoas. O resultado é um plano de ação concreto, com prioridades e responsáveis definidos.</p>
+      <div class="servico-card">
+        <p class="servico-tag">Para clínicas de 1 ou 2 operações</p>
+        <h3>Máquina de Pacientes</h3>
+        <p>Nenhum paciente sem resposta. Você sabe, todo dia, quantos chegaram, de onde vieram e quantos fecharam.</p>
         <ul class="servico-itens">
-          <li>Análise do DRE e fluxo de caixa</li>
-          <li>Mapeamento do funil comercial e CRM</li>
-          <li>Diagnóstico de processos operacionais</li>
-          <li>Identificação de gargalos e perdas ocultas</li>
-          <li>Plano de ação com 90 dias de prioridades</li>
+          <li>Gestão de tráfego no Meta e no Google</li>
+          <li>Atendimento automático no WhatsApp e no Instagram, que responde na hora e cadastra o lead</li>
+          <li>CRM com funil, confirmação de véspera e retomada de quem sumiu</li>
+          <li>BI de todos os canais: anúncio, indicação, parcerias e recorrência</li>
+          <li>Relatório e reunião mensal</li>
         </ul>
       </div>
-      <div class="servico-card">
-        <p class="servico-tag">Acompanhamento contínuo</p>
-        <h3>Consultoria Mensal Recorrente</h3>
-        <p>Para quem quer um sócio estratégico ao lado todo mês. Acompanhamento próximo dos indicadores, suporte nas decisões e ajustes de curso conforme o negócio evolui.</p>
+      <div class="servico-card featured">
+        <p class="servico-tag">Para institutos, escolas e clínicas com várias operações</p>
+        <h3>Gestão Completa</h3>
+        <p>Em 6 meses, meta batida com previsibilidade: você sabe quanto vai faturar antes de o mês acabar. É um diretor de operações sob demanda, com execução.</p>
         <ul class="servico-itens">
-          <li>Reuniões de acompanhamento mensais</li>
-          <li>Monitoramento de KPIs financeiros e comerciais</li>
-          <li>Revisão e ajuste do plano de ação</li>
-          <li>Suporte em contratações e reestruturações</li>
-          <li>Canal direto para dúvidas e decisões urgentes</li>
+          <li>Raio X da empresa e metas por operação</li>
+          <li>Tudo da Máquina de Pacientes: tráfego, atendimento automático, CRM e BI</li>
+          <li>Financeiro: DRE por operação, fluxo de caixa projetado e conciliação bancária</li>
+          <li>Processos, playbook de vendas e comissão por resultado</li>
+          <li>Reunião semanal e acompanhamento diário dos números</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="frentes">
+      <p class="section-label" style="margin-bottom:24px">O que entra em funcionamento</p>
+      <div class="frentes-grid">
+        <div class="frente"><h4>Atendimento automático e IA</h4><p>Robô no WhatsApp e no Instagram que responde em segundos, faz a triagem e entrega o lead pronto para a equipe. IA no atendimento como evolução.</p></div>
+        <div class="frente"><h4>Automações</h4><p>Follow-up em 1, 2 e 5 dias, confirmação com botões, lembrete de véspera com vídeo, remarcação de faltas e retomada de negociação.</p></div>
+        <div class="frente"><h4>CRM próprio</h4><p>Funil por operação, tela "Hoje" para o dono, fila de contatos, temperatura do lead e relatório da equipe.</p></div>
+        <div class="frente"><h4>BI de vendas e financeiro</h4><p>Meta, projeção do mês, funil, custo por lead e por venda em cada canal, resultado e saldo, numa tela só.</p></div>
+        <div class="frente"><h4>Financeiro e conciliação</h4><p>Contas a pagar e a receber com rateio entre operações, DRE de caixa, fluxo projetado e conciliação com o extrato do banco.</p></div>
+        <div class="frente"><h4>Integrações</h4><p>Sistema da clínica, conversões do Google Ads, gateway de pagamento e sistemas financeiros conversando com o CRM, sem digitar duas vezes.</p></div>
+        <div class="frente"><h4>Tráfego pago</h4><p>Meta e Google com a origem de cada lead rastreada até a venda, para saber quanto cada real investido devolve.</p></div>
+        <div class="frente"><h4>Processos e equipe</h4><p>POPs, roteiros de atendimento, funções e metas por pessoa, para a empresa não depender da memória de ninguém.</p></div>
+      </div>
+      <div class="sistema-video">
+        <video src="videos/sistema-fm.mp4" poster="videos/sistema-fm.jpg" controls playsinline preload="none"></video>
+        <p>Veja o sistema funcionando: todas as telas em 8 minutos, com nomes e números fictícios.</p>
       </div>
     </div>
   </div>
@@ -784,8 +814,8 @@
       </div>
       <div class="etapa">
         <p class="etapa-num">04</p>
-        <h4>Acompanhamento</h4>
-        <p>Para quem opta pela recorrência: presença mensal para garantir que o plano sai do papel e se ajusta à realidade.</p>
+        <h4>Implantação e acompanhamento</h4>
+        <p>Sistema, automações, integrações e tráfego colocados para rodar, com reunião semanal e os números conferidos todo dia.</p>
       </div>
     </div>
   </div>
@@ -823,26 +853,27 @@
         <p class="resultado-detalhe">Implementação de DRE, CRM, planejamento comercial, rotinas de gestão e estrutura de pessoas em 6 meses. Meta atingida no dia 22 do primeiro mês de operação estruturada.</p>
       </div>
       <div class="resultado-card">
-        <p class="resultado-segmento">Odontologia · Clínica + Sistema de Ensino · SP</p>
+        <p class="resultado-segmento">Odontologia · Clínica de implantes + Sistema de Ensino · SP · 6 meses</p>
         <div class="resultado-numeros">
           <div class="resultado-num-item">
-            <div class="resultado-num-val">R$119k</div>
-            <div class="resultado-num-desc">Faturamento no mês</div>
+            <div class="resultado-num-val">8x</div>
+            <div class="resultado-num-desc">Retorno sobre a consultoria</div>
           </div>
           <div class="resultado-num-item">
-            <div class="resultado-num-val">123%</div>
-            <div class="resultado-num-desc">da meta atingida</div>
+            <div class="resultado-num-val">R$179k</div>
+            <div class="resultado-num-desc">Faturados a mais em 6 meses</div>
           </div>
           <div class="resultado-num-item">
-            <div class="resultado-num-val">21</div>
-            <div class="resultado-num-desc">Vendas fechadas</div>
+            <div class="resultado-num-val">+35%</div>
+            <div class="resultado-num-desc">Faturamento médio mensal</div>
           </div>
           <div class="resultado-num-item">
-            <div class="resultado-num-val">38</div>
-            <div class="resultado-num-desc">Dias de consultoria</div>
+            <div class="resultado-num-val">9,7x</div>
+            <div class="resultado-num-desc">Retorno sobre a mídia (out)</div>
           </div>
         </div>
-        <p class="resultado-detalhe">Reestruturação do processo comercial, CRM e metas em menos de 2 meses. CPL de R$17,78 com 183 leads gerados via Meta Ads. Ticket médio de R$5.973.</p>
+        <p class="resultado-detalhe">De zero vendas atribuídas ao anúncio para 26 vendas vindas do tráfego em três meses. Meta batida em 4 dos 5 meses fechados, vendas por mês de 16,6 para 24,2 (+46%) e novembro como o melhor mês do ano da clínica. CRM, BI, financeiro e 10 automações implantados.</p>
+        <a class="resultado-link" href="cases/case-clinica-odontologica.html">Ver o case completo →</a>
       </div>
     </div>
   </div>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnóstico Empresarial Gratuito | Fernando Macedo</title>
-<meta name="description" content="Descubra em 4 minutos onde sua empresa está perdendo dinheiro. Diagnóstico gratuito em 6 pilares de gestão, com resultado na hora.">
+<meta name="description" content="Descubra em 5 minutos onde sua empresa está perdendo dinheiro. Diagnóstico gratuito em 6 pilares de gestão, com resultado na hora.">
 <meta property="og:title" content="Diagnóstico Empresarial Gratuito | Fernando Macedo">
-<meta property="og:description" content="18 perguntas, 6 pilares de gestão, resultado na hora. Descubra onde sua empresa está perdendo dinheiro.">
+<meta property="og:description" content="25 perguntas, 6 pilares de gestão, resultado na hora. Descubra onde sua empresa está perdendo dinheiro.">
 <meta property="og:url" content="https://fernandomacedoconsultoria.com.br/diagnostico/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,8 +165,8 @@
     <h1>Onde sua empresa está <em>perdendo dinheiro?</em></h1>
     <p class="lead">Um diagnóstico gratuito em 6 pilares de gestão, com a mesma lógica que uso no Raio X Empresarial dos meus clientes. Você responde, e o resultado sai na hora, com as prioridades por onde começar.</p>
     <div class="facts">
-      <span class="fact">⏱ 4 minutos</span>
-      <span class="fact">22 perguntas</span>
+      <span class="fact">⏱ 5 minutos</span>
+      <span class="fact">25 perguntas</span>
       <span class="fact">Resultado na hora</span>
     </div>
     <div class="pillars">
@@ -229,6 +229,9 @@
     <div class="section-label">O seu maior desafio, na leitura do método</div>
     <div id="r-challenge"></div>
 
+    <div class="section-label">Quanto pode estar ficando na mesa</div>
+    <div class="card highlight" id="r-loss"></div>
+
     <div class="section-label">Onde costuma haver dinheiro parado</div>
     <div class="card" id="r-money"></div>
 
@@ -288,6 +291,14 @@
       o: ["Até R$ 30 mil", "De R$ 30 mil a R$ 100 mil", "De R$ 100 mil a R$ 300 mil", "Acima de R$ 300 mil"] },
     { id: "equipe", perfil: true, tag: "Seu negócio", q: "Quantas pessoas trabalham na empresa, contando sócios?",
       o: ["1 a 3", "4 a 10", "11 a 30", "Mais de 30"] },
+
+    // Atendimento: não pontuam; alimentam a estimativa de dinheiro perdido.
+    { id: "mensagens", perfil: true, tag: "Seu atendimento", q: "Quantas mensagens de interessados novos (pacientes, alunos ou clientes) chegam por mês?",
+      o: ["Até 30", "De 30 a 100", "De 100 a 300", "Mais de 300", "Não sei"] },
+    { id: "resposta", perfil: true, tag: "Seu atendimento", q: "Quanto tempo a empresa costuma levar para responder a primeira mensagem?",
+      o: ["Até 5 minutos", "Até 1 hora", "No mesmo dia", "No dia seguinte ou depois", "Às vezes ninguém responde"] },
+    { id: "ticket", perfil: true, tag: "Seu atendimento", q: "Qual é o valor médio de uma venda (um tratamento, curso ou serviço fechado)?",
+      o: ["Até R$ 500", "De R$ 500 a R$ 2 mil", "De R$ 2 mil a R$ 5 mil", "De R$ 5 mil a R$ 15 mil", "Acima de R$ 15 mil"] },
 
     { id: "metas", p: "gestao", q: "A empresa tem metas mensais de faturamento, vendas e marketing?",
       o: ["Sim, por área, e acompanho toda semana", "Sim, mas só olho no fim do mês", "Existe uma meta geral de faturamento, sem desdobrar", "Não temos metas definidas"] },
@@ -384,6 +395,24 @@
     { area: "Marketing", texto: "Vendas inconsistentes vêm da falta de um processo constante de geração de oportunidades. Faturamento é consequência das etapas do funil: é nelas que se age." }
   ];
 
+  // Estimativa de dinheiro perdido por demora na primeira resposta.
+  // Premissas conservadoras: ponto médio de cada faixa, parte das mensagens
+  // que esfria conforme o tempo de resposta e 1 em cada 5 que fecharia.
+  var MSG_MEDIO = [20, 65, 200, 400, null];
+  var ESFRIA = [0.05, 0.15, 0.25, 0.35, 0.45];
+  var TICKET_MEDIO = [300, 1250, 3500, 10000, 20000];
+  var FECHARIA = 0.2;
+  function perda() {
+    var m = MSG_MEDIO[respostas.mensagens];
+    if (m == null) return null;
+    var pessoas = Math.round(m * ESFRIA[respostas.resposta]);
+    var valor = m * ESFRIA[respostas.resposta] * FECHARIA * TICKET_MEDIO[respostas.ticket];
+    valor = valor >= 10000 ? Math.round(valor / 1000) * 1000 : Math.round(valor / 100) * 100;
+    return { pessoas: Math.max(pessoas, 1), valor: valor, pct: Math.round(ESFRIA[respostas.resposta] * 100) };
+  }
+  var RESP_TXT = ["em até 5 minutos", "em até 1 hora", "só no mesmo dia", "no dia seguinte ou depois", "às vezes nunca chegando"];
+  function reais(v) { return "R$ " + v.toLocaleString("pt-BR"); }
+
   var respostas = {};
   var idx = 0;
 
@@ -448,6 +477,10 @@
       "Segmento: " + PERGUNTAS[0].o[respostas.segmento],
       "Faturamento mensal: " + PERGUNTAS[1].o[respostas.faturamento],
       "Equipe: " + PERGUNTAS[2].o[respostas.equipe] + " pessoas",
+      "Mensagens novas/mês: " + PERGUNTAS[3].o[respostas.mensagens],
+      "Primeira resposta: " + PERGUNTAS[4].o[respostas.resposta],
+      "Venda média: " + PERGUNTAS[5].o[respostas.ticket],
+      "Estimativa de perda: " + (perda() ? reais(perda().valor) + "/mês (" + perda().pessoas + " pessoas esfriando)" : "não sabe quantas mensagens chegam"),
       "Maior desafio: " + PERGUNTAS[PERGUNTAS.length - 1].o[respostas.desafio],
       "Pilares: " + Object.keys(PILARES).map(function (k) { return PILARES[k] + " " + r.notas[k]; }).join(" · "),
       "Mais críticos: " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]],
@@ -518,11 +551,27 @@
     } else {
       money = "No ticket médio e na indicação. Com base e captação organizadas, o próximo ganho vem de vender mais para quem já compra e de transformar clientes satisfeitos em fonte de clientes novos.";
     }
+    var pd = perda();
+    var loss = $("r-loss");
+    loss.innerHTML = "<b></b><p></p><p class='action'></p>";
+    if (pd) {
+      loss.querySelector("b").textContent = "Cerca de " + reais(pd.valor) + " por mês";
+      loss.querySelector("p").textContent = "Com a primeira resposta " + RESP_TXT[respostas.resposta] +
+        ", cerca de " + pd.pessoas + " pessoas por mês esfriam antes de conversar de verdade com a sua equipe. Se 1 em cada 5 delas fechasse, " +
+        "com a sua venda média, seriam cerca de " + reais(pd.valor) + " por mês a mais.";
+      loss.querySelectorAll("p")[1].textContent = "É uma estimativa conservadora a partir das suas respostas, não uma promessa. Quem responde em até 5 minutos perde bem menos: o primeiro passo costuma ser atendimento automático que responde na hora e registra cada contato.";
+    } else {
+      loss.querySelector("b").textContent = "Você não sabe quantas mensagens chegam";
+      loss.querySelector("p").textContent = "Esse costuma ser o primeiro dinheiro perdido: sem contar quem chega, não dá para saber quantos ficaram sem resposta nem quanto isso custa.";
+      loss.querySelectorAll("p")[1].textContent = "Primeiro passo: registrar cada pessoa que manda mensagem, com a origem, num só lugar.";
+    }
+
     $("r-money").innerHTML = "<p></p>";
     $("r-money").querySelector("p").textContent = money;
 
     var msg = "Olá, Fernando! Fiz o diagnóstico gratuito pelo seu site. Tirei " + r.geral + "/100 (" + nv.nome +
-      ") e meus pilares mais críticos foram " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]] + ". Quero agendar a conversa.";
+      ") e meus pilares mais críticos foram " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]] + "." +
+      (pd ? " A estimativa de perda deu cerca de " + reais(pd.valor) + " por mês." : "") + " Quero agendar a conversa.";
     $("r-whatsapp").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
     mostrar("result");
   }

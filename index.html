@@ -490,6 +490,29 @@
   .depoimentos-inner { max-width: 1100px; margin: 0 auto; }
   .depoimentos-header { margin-bottom: 64px; }
 
+  .depoimentos-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+  .depoimento-video {
+    margin: 0;
+    width: 300px;
+    max-width: 100%;
+    background: var(--surface);
+    border-top: 2px solid var(--gold);
+  }
+  .depoimento-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    object-fit: cover;
+  }
+  .depoimento-video .depoimento-autor { border-top: none; padding: 18px 20px 20px; }
+
   .depoimentos-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -831,6 +854,15 @@
     <div class="depoimentos-header">
       <p class="section-label">Quem já passou por aqui</p>
       <h2>Na voz de <em>quem viveu.</em></h2>
+    </div>
+    <div class="depoimentos-videos">
+      <figure class="depoimento-video">
+        <video src="videos/depoimento-richard.mp4" poster="videos/depoimento-richard.jpg" controls playsinline preload="none"></video>
+        <figcaption class="depoimento-autor">
+          <span class="depoimento-nome">Dr. Richard Salume</span>
+          <span class="depoimento-cargo">Implantodontista · 6 meses de consultoria</span>
+        </figcaption>
+      </figure>
     </div>
     <div class="depoimentos-grid">
       <div class="depoimento">

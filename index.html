@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fernando Macedo | Consultoria para clínicas e educação em saúde — atendimento em todo o Brasil</title>
-<meta name="description" content="Consultoria para clínicas odontológicas e empresas de educação em saúde: atendimento automático, captação em várias frentes e financeiro mostrando cada real, com sistema próprio.">
+<meta name="description" content="Mais faturamento sem gastar mais em anúncio. Consultoria para clínicas e escolas de odontologia: resposta rápida, captação por vários caminhos e o dinheiro que sobra no fim do mês. Atendimento em todo o Brasil.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -228,6 +228,16 @@
     line-height: 1.8;
   }
 
+  .praticas { background: var(--black); border-top: 0.5px solid rgba(255,255,255,0.06); }
+  .praticas-inner { max-width: 1100px; margin: 0 auto; }
+  .praticas-lead { font-size: 17px; color: var(--gray); margin: -8px 0 48px; max-width: 60ch; }
+  .praticas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .pratica { background: var(--surface); padding: 32px 28px; }
+  .pratica h3 { font-size: 17px; font-weight: 700; color: var(--white); margin: 0 0 10px; }
+  .pratica h3::before { content: ''; display: block; width: 24px; height: 2px; background: var(--gold); margin-bottom: 16px; }
+  .pratica p { font-size: 14.5px; line-height: 1.7; color: var(--gray); margin: 0; }
+  @media (max-width: 900px) { .praticas-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .praticas-grid { grid-template-columns: 1fr; } .pratica { padding: 26px 22px; } }
   .sobre { background: var(--surface); border-top: 0.5px solid rgba(255,255,255,0.06); }
 
   .sobre-grid {
@@ -685,8 +695,8 @@
 <section class="hero" id="inicio">
   <div class="hero-inner">
     <p class="eyebrow">Consultoria empresarial · Atendimento remoto em todo o Brasil</p>
-    <h1>Você paga o anúncio.<br><em>Quantos pacientes escapam antes de chegar na cadeira?</em></h1>
-    <p class="hero-sub">A mensagem respondida no outro dia, o retorno esquecido, a indicação que ninguém liga de volta. A consultoria da FM já começa com o sistema, as automações e as integrações instalados, e traz pacientes por vários caminhos, não só pelo anúncio. Para clínicas odontológicas e empresas de educação em saúde.</p>
+    <h1>Mais faturamento<br><em>sem gastar mais em anúncio.</em></h1>
+    <p class="hero-sub">Pacientes e alunos escapam entre a primeira mensagem e o fechamento: a resposta demora, o retorno é esquecido, a indicação esfria. A FM fecha esses buracos e faz os interessados chegarem por vários caminhos, não só pelo anúncio. Para clínicas e escolas de odontologia.</p>
     <div class="cta-group">
       <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa." class="btn-primary" target="_blank" rel="noopener">
         Agendar conversa gratuita
@@ -694,6 +704,23 @@
       </a>
       <a href="https://fernandomacedoconsultoria.com.br/diagnostico/?origem=site" class="btn-outline">Fazer o diagnóstico gratuito</a>
       <a href="#servicos" class="btn-secondary">Ver os serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRÁTICAS -->
+<section class="praticas" id="praticas">
+  <div class="praticas-inner">
+    <p class="section-label">O que muda o faturamento</p>
+    <h2>O que as clínicas e escolas<br><em>que mais faturam fazem.</em></h2>
+    <p class="praticas-lead">Não é mais verba de anúncio. É não deixar escapar quem já levantou a mão.</p>
+    <div class="praticas-grid">
+      <div class="pratica"><h3>Respondem em minutos</h3><p>Inclusive à noite e no fim de semana, que é quando muita gente manda a primeira mensagem.</p></div>
+      <div class="pratica"><h3>Voltam a falar com quem sumiu</h3><p>Quem pediu orçamento e não respondeu recebe retorno no dia certo, sem depender de alguém lembrar.</p></div>
+      <div class="pratica"><h3>Não deixam a indicação esfriar</h3><p>Pedem indicação na hora certa e respondem a indicação no mesmo dia. É o cliente que fecha mais fácil.</p></div>
+      <div class="pratica"><h3>Chamam de volta quem já é da casa</h3><p>O paciente que fez tratamento e o aluno que fez um curso são os mais fáceis de vender de novo.</p></div>
+      <div class="pratica"><h3>Captam por vários caminhos</h3><p>Anúncio, indicação, parcerias e mídia local quando faz sentido. Nenhum canal sozinho segura o mês.</p></div>
+      <div class="pratica"><h3>Sabem quanto sobra</h3><p>Não só quanto faturam. Faturar bem e faltar dinheiro no fim do mês acontece com quem só olha a venda.</p></div>
     </div>
   </div>
 </section>
@@ -772,9 +799,9 @@
         <p class="versus-tit">Quando depende de alguém lembrar</p>
         <ul>
           <li>A mensagem das 22h é respondida no outro dia, quando é</li>
-          <li>O retorno ao paciente fica para depois na semana corrida</li>
+          <li>O retorno a quem pediu orçamento fica para depois na semana corrida</li>
           <li>A indicação chega e ninguém liga de volta</li>
-          <li>Quem terminou o tratamento nunca mais é chamado</li>
+          <li>Quem já foi paciente ou aluno nunca mais é chamado</li>
           <li>O relatório é montado à mão no fim do mês</li>
         </ul>
       </div>
@@ -784,7 +811,7 @@
           <li>Resposta em segundos, a qualquer hora, com o contato já no CRM</li>
           <li>Retorno em 1, 2 e 5 dias sem ninguém precisar lembrar</li>
           <li>Cada indicação registrada com a origem e um responsável</li>
-          <li>Paciente antigo lembrado pelo sistema, não pela memória da recepção</li>
+          <li>Ex-pacientes e ex-alunos lembrados pelo sistema, não pela memória de alguém</li>
           <li>Números atualizados sozinhos, todo dia</li>
         </ul>
       </div>

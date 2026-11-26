@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fernando Macedo | Consultoria Empresarial — São José do Rio Preto</title>
-<meta name="description" content="Consultoria especializada em clínicas odontológicas e empresas de educação em São José do Rio Preto e região. Diagnóstico preciso, estrutura operacional e resultado real.">
+<meta name="description" content="Consultoria para clínicas odontológicas e empresas de educação em saúde: atendimento automático, captação em várias frentes e financeiro mostrando cada real, com sistema próprio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -286,6 +286,18 @@
   .servicos-grid .servico-card:not(.featured) { border-top: 3px solid transparent; }
   .servicos-grid .servico-card > p:not(.servico-tag) { min-height: 6.6em; }
   @media (max-width: 900px) { .servicos-grid .servico-tag, .servicos-grid .servico-card > p:not(.servico-tag) { min-height: 0; } }
+  .versus { margin-top: 2px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .versus-col { background: var(--surface2); padding: 36px 40px; border-top: 3px solid transparent; }
+  .versus-col.versus-fm { background: var(--surface); border-top-color: var(--gold); }
+  .versus-tit { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin: 0 0 18px; }
+  .versus-fm .versus-tit { color: var(--gold); }
+  .versus ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .versus li { font-size: 14.5px; line-height: 1.6; color: var(--gray); padding-left: 22px; position: relative; }
+  .versus li::before { content: '\2715'; position: absolute; left: 0; top: 1px; font-size: 11px; color: #b06a6a; }
+  .versus-fm li { color: var(--white); }
+  .versus-fm li::before { content: '\2713'; color: var(--gold); font-size: 13px; top: 0; }
+  .versus-nota { grid-column: 1 / -1; margin: 18px 0 0; font-size: 14px; color: var(--gray); text-align: center; }
+  @media (max-width: 900px) { .versus { grid-template-columns: 1fr; } .versus-col { padding: 28px 24px; } }
   .frentes { margin-top: 72px; }
   .frentes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
   .frente { background: var(--surface); padding: 28px 24px; }
@@ -672,8 +684,8 @@
 <section class="hero" id="inicio">
   <div class="hero-inner">
     <p class="eyebrow">Consultoria Empresarial · São José do Rio Preto</p>
-    <h1>Gestão que gera<br><em>resultado real.</em></h1>
-    <p class="hero-sub">Mais pacientes fechando, nenhum lead sem resposta e você sabendo quanto vai faturar antes de o mês acabar. Gestão, tráfego, atendimento automático, BI e financeiro com sistema próprio, para clínicas odontológicas e empresas de educação em saúde.</p>
+    <h1>Sua clínica vendendo<br><em>sem depender de alguém lembrar.</em></h1>
+    <p class="hero-sub">Atendimento que responde na hora, pacientes chegando por vários caminhos e não só pelo anúncio, e o financeiro mostrando cada real. A consultoria já começa com o sistema, as automações e as integrações instalados. Para clínicas odontológicas e empresas de educação em saúde.</p>
     <div class="cta-group">
       <a href="https://wa.me/5517996263826?text=Ol%C3%A1%2C%20Fernando%21%20Gostaria%20de%20agendar%20uma%20conversa." class="btn-primary" target="_blank" rel="noopener">
         Agendar conversa gratuita
@@ -694,7 +706,7 @@
       <div class="sobre-bio">
         <p>Sou <strong>Fernando Giovanini Macedo</strong>, biólogo de formação e gestor por escolha. Após 13 anos na área acadêmica e científica, trouxe para o mundo dos negócios a mesma disciplina analítica de quem passou anos mapeando sistemas complexos.</p>
         <p>Desde 2022 atuo como <strong>Diretor de Operações no Grupo Inteegra</strong>, onde construí os processos comerciais, o CRM e o time de vendas do zero. Em paralelo, fundei a FM Consultoria para levar a mesma abordagem estruturada a donos de negócios que precisam de clareza, não de mais teoria.</p>
-        <p>Meu método parte de um diagnóstico honesto, identifica o que está travando o crescimento e entrega um plano acionável, sem ruído.</p>
+        <p>Meu método parte de um diagnóstico honesto e termina com a estrutura funcionando: sistema, automações e rotina instalados na empresa, não um plano esquecido na gaveta.</p>
         <p>Baseado em <strong>São José do Rio Preto, SP</strong> — atendo clínicas e empresas de educação em todo o Brasil.</p>
       </div>
     </div>
@@ -708,8 +720,8 @@
         <div class="numero-desc">segmentos de especialização: odontologia e educação</div>
       </div>
       <div class="numero-card">
-        <div class="numero-val">30</div>
-        <div class="numero-desc">dias para um diagnóstico completo com plano de ação</div>
+        <div class="numero-val">38</div>
+        <div class="numero-desc">dias para colocar CRM, funil, financeiro e automações no ar</div>
       </div>
       <div class="numero-card">
         <div class="numero-val">13<span>+</span></div>
@@ -725,7 +737,7 @@
     <div class="servicos-header">
       <p class="section-label">O que ofereço</p>
       <h2>Não só aponto o caminho.<br><em>Coloco para rodar.</em></h2>
-      <p class="lead">O consultor tradicional entrega um plano. A agência cuida só do anúncio. Aqui, quem olha o negócio como diretor de operações também põe a captação, o atendimento e o financeiro para funcionar, com sistema próprio. Tudo começa pelo diagnóstico gratuito.</p>
+      <p class="lead">O consultor tradicional entrega um plano e deixa a equipe preenchendo planilha. A agência aposta tudo no anúncio. Aqui, a consultoria já começa com o sistema, as automações e as integrações instalados, e os pacientes chegam por vários caminhos: anúncio, indicação, quem já foi paciente e mídia local quando faz sentido.</p>
     </div>
     <div class="servicos-grid">
       <div class="servico-card">
@@ -733,11 +745,11 @@
         <h3>Máquina de Pacientes</h3>
         <p>Nenhum paciente sem resposta. Você sabe, todo dia, quantos chegaram, de onde vieram e quantos fecharam.</p>
         <ul class="servico-itens">
-          <li>Gestão de tráfego no Meta e no Google</li>
+          <li>Captação em várias frentes: tráfego no Meta e no Google, indicação e retorno de pacientes</li>
           <li>Atendimento automático no WhatsApp e no Instagram, que responde na hora e cadastra o lead</li>
           <li>CRM com funil, confirmação de véspera e retomada de quem sumiu</li>
           <li>BI de todos os canais: anúncio, indicação, parcerias e recorrência</li>
-          <li>Relatório e reunião mensal</li>
+          <li>Reunião mensal com os números já prontos no sistema, sem relatório feito à mão</li>
         </ul>
       </div>
       <div class="servico-card featured">
@@ -746,12 +758,36 @@
         <p>Em 6 meses, meta batida com previsibilidade: você sabe quanto vai faturar antes de o mês acabar. É um diretor de operações sob demanda, com execução.</p>
         <ul class="servico-itens">
           <li>Raio X da empresa e metas por operação</li>
-          <li>Tudo da Máquina de Pacientes: tráfego, atendimento automático, CRM e BI</li>
+          <li>Tudo da Máquina de Pacientes: captação, atendimento automático, CRM e BI</li>
           <li>Financeiro: DRE por operação, fluxo de caixa projetado e conciliação bancária</li>
           <li>Processos, playbook de vendas e comissão por resultado</li>
           <li>Reunião semanal e acompanhamento diário dos números</li>
         </ul>
       </div>
+    </div>
+
+    <div class="versus">
+      <div class="versus-col">
+        <p class="versus-tit">Quando depende de alguém lembrar</p>
+        <ul>
+          <li>A mensagem das 22h é respondida no outro dia, quando é</li>
+          <li>O retorno ao paciente fica para depois na semana corrida</li>
+          <li>A indicação chega e ninguém liga de volta</li>
+          <li>Quem terminou o tratamento nunca mais é chamado</li>
+          <li>O relatório é montado à mão no fim do mês</li>
+        </ul>
+      </div>
+      <div class="versus-col versus-fm">
+        <p class="versus-tit">Com o sistema da FM rodando</p>
+        <ul>
+          <li>Resposta em segundos, a qualquer hora, com o contato já no CRM</li>
+          <li>Retorno em 1, 2 e 5 dias sem ninguém precisar lembrar</li>
+          <li>Cada indicação registrada com a origem e um responsável</li>
+          <li>Paciente antigo lembrado pelo sistema, não pela memória da recepção</li>
+          <li>Números atualizados sozinhos, todo dia</li>
+        </ul>
+      </div>
+      <p class="versus-nota">A equipe continua essencial. A diferença é que o sistema avisa, cobra e registra, e ela só precisa agir.</p>
     </div>
 
     <div class="frentes">
@@ -763,7 +799,7 @@
         <div class="frente"><h4>BI de vendas e financeiro</h4><p>Meta, projeção do mês, funil, custo por lead e por venda em cada canal, resultado e saldo, numa tela só.</p></div>
         <div class="frente"><h4>Financeiro e conciliação</h4><p>Contas a pagar e a receber com rateio entre operações, DRE de caixa, fluxo projetado e conciliação com o extrato do banco.</p></div>
         <div class="frente"><h4>Integrações</h4><p>Sistema da clínica, conversões do Google Ads, gateway de pagamento e sistemas financeiros conversando com o CRM, sem digitar duas vezes.</p></div>
-        <div class="frente"><h4>Tráfego pago</h4><p>Meta e Google com a origem de cada lead rastreada até a venda, para saber quanto cada real investido devolve.</p></div>
+        <div class="frente"><h4>Captação em várias frentes</h4><p>Tráfego no Meta e no Google com o criativo trocado quando cansa, indicação que não se perde, retorno de pacientes e, quando faz sentido na cidade, panfleto, rádio ou carro de som.</p></div>
         <div class="frente"><h4>Processos e equipe</h4><p>POPs, roteiros de atendimento, funções e metas por pessoa, para a empresa não depender da memória de ninguém.</p></div>
       </div>
       <div class="sistema-video">
@@ -785,7 +821,7 @@
       <div class="segmento">
         <p class="segmento-icone">Odontologia</p>
         <h3>Clínicas odontológicas</h3>
-        <p>Donos de clínicas particulares ou redes que enfrentam dificuldade em crescer com previsibilidade: taxa de conversão baixa, custo alto por paciente, equipe sem processo, financeiro sem clareza. A consultoria estrutura o que precisa ser estruturado e mostra onde o dinheiro está sendo perdido.</p>
+        <p>Donos de clínicas particulares ou redes que enfrentam dificuldade em crescer com previsibilidade: taxa de conversão baixa, custo alto por paciente, equipe sem processo, financeiro sem clareza. A consultoria coloca atendimento, captação e financeiro para rodar no sistema e mostra onde o dinheiro está sendo perdido.</p>
       </div>
       <div class="segmento">
         <p class="segmento-icone">Educação</p>

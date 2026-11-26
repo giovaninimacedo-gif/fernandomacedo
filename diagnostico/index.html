@@ -249,6 +249,7 @@
         <span>Agendar conversa com Fernando</span>
       </a>
       <p class="note" style="margin:14px 0 0">Também pode salvar este resultado: <button class="link-btn" id="print" style="color:var(--gold-soft);padding:0">baixar em PDF</button></p>
+      <p class="note" id="print-aviso" style="margin:8px 0 0"></p>
     </div>
   </section>
 
@@ -591,13 +592,120 @@
       ") e meus pilares mais críticos foram " + PILARES[ordem[0]] + " e " + PILARES[ordem[1]] + "." +
       (pd ? " A estimativa de perda deu cerca de " + reais(pd.valor) + " por mês." : "") + " Quero agendar a conversa.";
     $("r-whatsapp").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    ULTIMO = { r: r, nome: nome, money: money, pd: pd, ordem: ordem, nv: nv };
     mostrar("result");
+  }
+
+  // PDF gerado no próprio navegador (jsPDF). O window.print() não funciona
+  // no celular nem dentro do navegador do Instagram e do Linktree.
+  var ULTIMO = null;
+  function carregarJsPDF() {
+    return new Promise(function (ok, erro) {
+      if (window.jspdf) return ok(window.jspdf.jsPDF);
+      var s = document.createElement("script");
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+      s.onload = function () { ok(window.jspdf.jsPDF); };
+      s.onerror = erro;
+      document.head.appendChild(s);
+    });
+  }
+  function limpar(t) { return String(t).replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/→/g, "-").replace(/[–—]/g, "-"); }
+  function gerarPDF(jsPDF) {
+    var u = ULTIMO, r = u.r;
+    var doc = new jsPDF({ unit: "mm", format: "a4" });
+    var M = 18, LW = 210 - 2 * M, y = 0;
+    var NAVY = [10, 10, 10], GOLDC = [184, 146, 62], TXT = [40, 40, 40], MUT = [110, 110, 110];
+    function pagina(h) { if (y + h > 280) { doc.addPage(); y = 20; } }
+    function texto(t, size, cor, estilo, gap) {
+      doc.setFont("helvetica", estilo || "normal"); doc.setFontSize(size); doc.setTextColor.apply(doc, cor);
+      var linhas = doc.splitTextToSize(limpar(t), LW);
+      linhas.forEach(function (l) { pagina(size * 0.45); doc.text(l, M, y); y += size * 0.45; });
+      y += gap == null ? 2 : gap;
+    }
+    function rotulo(t) { y += 4; pagina(14); texto(t.toUpperCase(), 9, GOLDC, "bold", 1); doc.setDrawColor.apply(doc, GOLDC); doc.setLineWidth(0.3); doc.line(M, y, M + 20, y); y += 5; }
+    // cabeçalho
+    doc.setFillColor.apply(doc, NAVY); doc.rect(0, 0, 210, 34, "F");
+    doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor.apply(doc, GOLDC);
+    doc.text("FERNANDO MACEDO - CONSULTORIA EMPRESARIAL", M, 13);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(17); doc.setTextColor(255, 255, 255);
+    doc.text(limpar("Diagnóstico empresarial de " + u.nome.split(" ")[0]), M, 24);
+    doc.setFontSize(9); doc.setTextColor(190, 190, 190);
+    doc.text(new Date().toLocaleDateString("pt-BR"), 210 - M, 24, { align: "right" });
+    y = 48;
+    doc.setFont("helvetica", "bold"); doc.setFontSize(34); doc.setTextColor.apply(doc, GOLDC);
+    doc.text(String(r.geral), M, y);
+    var w = doc.getTextWidth(String(r.geral));
+    doc.setFontSize(13); doc.setTextColor.apply(doc, MUT); doc.text("/100   Nível: " + u.nv.nome, M + w + 2, y);
+    y += 8;
+    texto(u.nv.texto, 10.5, TXT);
+    rotulo("Seus 6 pilares");
+    Object.keys(PILARES).forEach(function (k) {
+      pagina(10);
+      var n = r.notas[k];
+      doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor.apply(doc, TXT);
+      doc.text(limpar(PILARES[k]), M, y); doc.text(String(n), 210 - M, y, { align: "right" });
+      y += 2;
+      doc.setFillColor(230, 230, 230); doc.rect(M, y, LW, 2.2, "F");
+      var c = n < 40 ? [200, 70, 60] : n < 70 ? [220, 150, 40] : [60, 160, 90];
+      doc.setFillColor.apply(doc, c); doc.rect(M, y, Math.max(n, 3) / 100 * LW, 2.2, "F");
+      y += 7;
+    });
+    rotulo("Por onde começar");
+    u.ordem.slice(0, 3).forEach(function (k, i) {
+      texto((i + 1) + ". " + PILARES[k] + " - " + r.notas[k] + "/100", 11, NAVY, "bold", 1);
+      texto(LEITURA[k][faixa(r.notas[k])], 10, TXT, "normal", 1);
+      texto("Primeiro passo: " + LEITURA[k].acao, 10, GOLDC, "normal", 4);
+    });
+    var d = DESAFIOS[respostas.desafio];
+    rotulo("O seu maior desafio");
+    texto('"' + PERGUNTAS[PERGUNTAS.length - 1].o[respostas.desafio] + '" - área provável: ' + d.area, 10.5, NAVY, "bold", 1);
+    texto(d.texto, 10, TXT);
+    rotulo("Quanto pode estar ficando na mesa");
+    if (u.pd) {
+      texto("Cerca de " + reais(u.pd.valor) + " por mês", 12, NAVY, "bold", 1);
+      texto("Com a primeira resposta " + RESP_TXT[respostas.resposta] + ", cerca de " + u.pd.pessoas + " pessoas por mês esfriam antes de conversar de verdade com a sua equipe. Se 1 em cada 5 delas fechasse, com a sua venda média, seriam cerca de " + reais(u.pd.valor) + " por mês a mais. Estimativa conservadora, não uma promessa.", 10, TXT);
+    } else {
+      texto("Você não sabe quantas mensagens chegam. Esse costuma ser o primeiro dinheiro perdido: sem contar quem chega, não dá para saber quantos ficaram sem resposta.", 10, TXT);
+    }
+    rotulo("Onde costuma haver dinheiro parado");
+    texto(u.money, 10, TXT);
+    y += 4; pagina(26);
+    doc.setFillColor(248, 244, 232); doc.rect(M, y, LW, 22, "F");
+    doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor.apply(doc, NAVY);
+    doc.text(limpar("Quer transformar isso em um plano de ação?"), M + 5, y + 8);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor.apply(doc, TXT);
+    doc.text(limpar("Conversa de 30 minutos, sem custo. WhatsApp (17) 99626-3826 - fernandomacedoconsultoria.com.br"), M + 5, y + 15);
+    return doc;
+  }
+  function baixarPDF() {
+    var btn = $("print"), aviso = $("print-aviso");
+    if (!ULTIMO) return;
+    btn.disabled = true; btn.textContent = "gerando o PDF…";
+    carregarJsPDF().then(function (jsPDF) {
+      var doc = gerarPDF(jsPDF);
+      var nomeArq = "diagnostico-" + ULTIMO.nome.split(" ")[0].toLowerCase().normalize("NFD").replace(/[^a-z]/g, "") + ".pdf";
+      var ua = navigator.userAgent;
+      var inApp = /Instagram|FBAN|FBAV|LinkedInApp|Line\/|Twitter|TikTok/i.test(ua);
+      var ios = /iPhone|iPad|iPod/i.test(ua);
+      if (inApp || ios) {
+        // Navegadores de apps e o iPhone abrem o PDF numa aba; dali dá para salvar ou compartilhar.
+        var url = doc.output("bloburl");
+        var w = window.open(url, "_blank");
+        if (!w) location.href = url;
+        aviso.textContent = inApp ? "Se o PDF não abrir, toque em ⋯ no canto da tela e escolha \"Abrir no navegador\"." : "O PDF abriu em outra aba: toque em compartilhar para salvar.";
+      } else {
+        doc.save(nomeArq);
+        aviso.textContent = "PDF baixado: " + nomeArq;
+      }
+    }).catch(function () {
+      aviso.textContent = "Não consegui gerar o PDF agora. Tente de novo em alguns segundos.";
+    }).then(function () { btn.disabled = false; btn.textContent = "baixar em PDF"; });
   }
 
   $("start").onclick = function () { idx = 0; mostrar("quiz"); renderPergunta(); };
   $("back").onclick = function () { if (idx > 0) { idx--; renderPergunta(); } };
   $("back-contact").onclick = function () { idx = PERGUNTAS.length - 1; mostrar("quiz"); renderPergunta(); };
-  $("print").onclick = function () { window.print(); };
+  $("print").onclick = baixarPDF;
 
   $("lead-form").onsubmit = function (e) {
     e.preventDefault();
